@@ -382,18 +382,8 @@
     font-family:'Playfair Display',serif;
     font-size:0.72rem; font-weight:700; color:white;
   }
-  .trail-marker-dot {
-    position:absolute;
-    top:-1px; right:-1px;
-    width:10px; height:10px;
-    border-radius:50%;
-    border:2px solid white;
-    transform:rotate(45deg);
-    box-shadow:0 1px 3px rgba(0,0,0,0.35);
-  }
-  .trail-marker-dot.open     { background:var(--open); }
-  .trail-marker-dot.closed   { background:var(--closed); }
-  .trail-marker-dot.seasonal { background:var(--seasonal); }
+  .trail-marker.closed   { filter: grayscale(1) opacity(0.45); }
+  .trail-marker.seasonal { filter: grayscale(0.4) opacity(0.7); }
 
   .leaflet-control-attribution { font-size:9px !important; }
 
@@ -779,7 +769,13 @@ async function loadGPX(trail) {
 }
 
 function addGPXToMap(trail, pts) {
-  if (gpxLayers[trail.id] || !markers[trail.id]) return;
+  if (!markers[trail.id]) return;
+  trail._gpxPts = pts;
+  // Layer schon vorhanden – nur Badge sicherstellen, Sichtbarkeit bleibt unverändert
+  if (gpxLayers[trail.id]) {
+    setGPXBadge(trail.id);
+    return;
+  }
   const color = DIFF_COLORS[trail.schwierigkeit] || '#888';
   const line = L.polyline(pts, { color, weight: 4, opacity: 0.85, lineJoin: 'round', lineCap: 'round' });
   line.on('click', () => openSheet(trail));
@@ -788,32 +784,38 @@ function addGPXToMap(trail, pts) {
   const endM = L.circleMarker(pts[pts.length-1], { radius: 6, fillColor: '#c94a1e', color: 'white', weight: 2, fillOpacity: 1 });
   endM.on('click', () => openSheet(trail));
   gpxLayers[trail.id] = { line, startM, endM, pts };
-  trail._gpxPts = pts;
   if (gpxMode) {
     line.addTo(map); startM.addTo(map); endM.addTo(map);
+    markers[trail.id].setOpacity(0);
   }
-  // GPX-Badge auf Card setzen
-  const card = document.querySelector(`.trail-card[data-trail-id="${trail.id}"]`);
-  if (card) {
-    const meta = card.querySelector('.trail-meta');
-    if (meta && !meta.querySelector('.badge-gpx')) {
-      const badge = document.createElement('span');
-      badge.className = 'badge-gpx';
-      badge.textContent = 'GPX';
-      meta.insertBefore(badge, meta.children[1]);
-    }
+  setGPXBadge(trail.id);
+}
+
+function setGPXBadge(id) {
+  const card = document.querySelector(`.trail-card[data-trail-id="${id}"]`);
+  if (!card) return;
+  const meta = card.querySelector('.trail-meta');
+  if (meta && !meta.querySelector('.badge-gpx')) {
+    const badge = document.createElement('span');
+    badge.className = 'badge-gpx';
+    badge.textContent = 'GPX';
+    meta.insertBefore(badge, meta.children[1]);
   }
 }
 
-function clearGPXLayers() {
-  Object.values(gpxLayers).forEach(({ line, startM, endM }) => {
-    map.removeLayer(line); map.removeLayer(startM); map.removeLayer(endM);
-  });
-  gpxLayers = {};
+function removeGPXLayer(id) {
+  if (!gpxLayers[id]) return;
+  const { line, startM, endM } = gpxLayers[id];
+  map.removeLayer(line); map.removeLayer(startM); map.removeLayer(endM);
+  if (markers[id]) markers[id].setOpacity(1);
+  delete gpxLayers[id];
 }
 
 function render(list) {
-  clearGPXLayers();
+  // Nur GPX-Layer entfernen die nicht mehr in der gefilterten Liste sind
+  const listIds = new Set(list.map(t => t.id));
+  Object.keys(gpxLayers).forEach(id => { if (!listIds.has(Number(id))) removeGPXLayer(id); });
+
   Object.values(markers).forEach(m => map.removeLayer(m));
   markers = {};
   document.getElementById('trail-list-inner').innerHTML = '';
@@ -824,7 +826,7 @@ function render(list) {
 
     const icon = L.divIcon({
       className: '',
-      html: `<div class="trail-marker" style="background:${color}"><span>${trail.id}</span><div class="trail-marker-dot ${trail.status}"></div></div>`,
+      html: `<div class="trail-marker ${trail.status}" style="background:${color}"><span>${trail.id}</span></div>`,
       iconSize: [30,30], iconAnchor: [15,30]
     });
     const m = L.marker([trail.lat, trail.lng], { icon }).addTo(map);
@@ -936,12 +938,14 @@ function setupFilters() {
   document.getElementById('gpx-toggle').addEventListener('change', e => {
     gpxMode = e.target.checked;
     if (!gpxMode) {
-      Object.values(gpxLayers).forEach(({ line, startM, endM }) => {
+      Object.entries(gpxLayers).forEach(([id, { line, startM, endM }]) => {
         map.removeLayer(line); map.removeLayer(startM); map.removeLayer(endM);
+        if (markers[id]) markers[id].setOpacity(1);
       });
     } else {
-      Object.values(gpxLayers).forEach(({ line, startM, endM }) => {
+      Object.entries(gpxLayers).forEach(([id, { line, startM, endM }]) => {
         line.addTo(map); startM.addTo(map); endM.addTo(map);
+        if (markers[id]) markers[id].setOpacity(0);
       });
     }
   });
