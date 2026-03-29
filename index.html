@@ -608,7 +608,7 @@ function bootApp() {
 
 function initMap() {
   map = L.map('map', { center: CONFIG.mapCenter, zoom: CONFIG.mapZoom, zoomControl: false });
-  L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png?api_key=2217b90b-4869-4ae8-865e-69dee2ae9fa6', {
+  L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 20
   }).addTo(map);
@@ -643,8 +643,20 @@ function parseCSV(csv) {
       else cur += ch;
     }
     cols.push(cur.trim());
-    const [name, lat, lng, schwierigkeit, status, notes, komoot] = cols;
-    return { id: i+1, name, lat: parseFloat(lat), lng: parseFloat(lng),
+    // Format mit id-Spalte: id, name, coords, schwierigkeit, status, notes, komoot
+    // Format ohne id-Spalte: name, coords, schwierigkeit, status, notes, komoot
+    let id, name, coords, schwierigkeit, status, notes, komoot;
+    if (cols.length >= 7) {
+      [id, name, coords, schwierigkeit, status, notes, komoot] = cols;
+    } else {
+      [name, coords, schwierigkeit, status, notes, komoot] = cols;
+      id = i + 1;
+    }
+    // coords als "lat lng" (Leerzeichen) oder "lat, lng" (Komma)
+    const coordParts = (coords || '').split(/[\s,]+/).filter(Boolean);
+    const lat = parseFloat(coordParts[0]);
+    const lng = parseFloat(coordParts[1]);
+    return { id: parseInt(id) || i+1, name, lat, lng,
              schwierigkeit, status: (status||'').toLowerCase().trim(),
              notes: notes||'', komoot: komoot||'#' };
   }).filter(t => t.name && !isNaN(t.lat));
