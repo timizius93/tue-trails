@@ -520,12 +520,12 @@
 const CONFIG = {
   // Passwort-Hash – niemals das Klartext-Passwort hier speichern!
   // Hash neu erzeugen: simpleHash('deinPasswort') in der Browser-Konsole eingeben
-  passwordHash: 'e85b9b2c', // = trails2024
+  passwordHash: 'a63b5d9',
 
   // Google Sheets CSV-Export-URL
   // Anleitung: Datei → Im Web veröffentlichen → CSV → URL hier einfügen
   // Leer lassen = Demo-Daten werden genutzt
-  googleSheetsUrl: '',
+  googleSheetsUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQfXeiURV7LuwPymekoblzLgFQlLI2MuYww2pz51MlKDyeWEGpB_sPtZdQRWIcOtD-ftSPND-sFq8_/pub?gid=512130050&single=true&output=csv',
 
   mapCenter: [48.521, 9.058],
   mapZoom: 13
@@ -608,9 +608,9 @@ function bootApp() {
 
 function initMap() {
   map = L.map('map', { center: CONFIG.mapCenter, zoom: CONFIG.mapZoom, zoomControl: false });
-  L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap | OpenTopoMap (CC-BY-SA)',
-    maxZoom: 17
+  L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png?api_key=2217b90b-4869-4ae8-865e-69dee2ae9fa6', {
+    attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 20
   }).addTo(map);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
 }
