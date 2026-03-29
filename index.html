@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>TÜ Trails</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+  :root {
+    --bg:        #f5f0e8;
+    --bg2:       #ede8dd;
+    --surface:   #ffffff;
+    --border:    #d8d0c0;
+    --border2:   #c8bfaa;
+    --accent:    #3d6b3a;
+    --accent2:   #5a8f56;
+    --accent-lt: #e8f0e7;
+    --text:      #2c2416;
+    --text-mid:  #5a5040;
+    --text-muted:#9a8f7a;
+    --s1:        #3d8c5a;
+    --s2:        #2e72b5;
+    --s3:        #c94a1e;
+    --s4:        #1a1a1a;
+    --open:      #3d8c5a;
+    --closed:    #c94a1e;
+    --seasonal:  #b5822a;
+    --radius:    10px;
+    --radius-sm: 6px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── PASSWORD SCREEN ── */
+  #pw-screen {
+    position: fixed; inset:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 2rem;
+    background: var(--bg);
+    background-image: radial-gradient(ellipse 100% 80% at 50% 110%, rgba(61,107,58,0.12) 0%, transparent 65%);
+  }
+
+  .pw-icon {
+    width: 64px; height: 64px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 20px rgba(61,107,58,0.3);
+  }
+
+  .pw-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .pw-sub {
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .pw-card {
+    width: 100%;
+    max-width: 340px;
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 2px 24px rgba(44,36,22,0.1), 0 0 0 1px var(--border);
+  }
+
+  .pw-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  #pw-input {
+    width: 100%;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.8rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 0.75rem;
+  }
+
+  #pw-input:focus {
+    border-color: var(--accent2);
+    box-shadow: 0 0 0 3px rgba(90,143,86,0.15);
+  }
+
+  #pw-input.error {
+    border-color: var(--closed);
+    animation: shake 0.32s ease;
+  }
+
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25%      { transform: translateX(-7px); }
+    75%      { transform: translateX(7px); }
+  }
+
+  #pw-btn {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.85rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  #pw-btn:hover  { background: var(--accent2); }
+  #pw-btn:active { transform: scale(0.98); }
+
+  #pw-error {
+    font-size: 0.78rem;
+    color: var(--closed);
+    text-align: center;
+    margin-top: 0.6rem;
+    min-height: 1em;
+  }
+
+  /* ── MAIN APP ── */
+  #app { display:none; flex-direction:column; min-height:100vh; }
+
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 1.25rem 0.8rem;
+    position: sticky; top:0; z-index:200;
+    display: flex; align-items:center; justify-content:space-between;
+    box-shadow: 0 1px 8px rgba(44,36,22,0.07);
+  }
+
+  .header-brand { display:flex; align-items:center; gap:0.7rem; }
+
+  .header-icon {
+    width:36px; height:36px;
+    background: var(--accent-lt);
+    border-radius: 8px;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .header-icon svg { width:20px; height:20px; }
+
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; font-weight:700;
+    color: var(--text); letter-spacing:-0.01em;
+  }
+
+  .header-sub {
+    font-size:0.65rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--text-muted); margin-top:-0.1rem;
+  }
+
+  .trail-pill {
+    background: var(--accent-lt); color: var(--accent);
+    border-radius:20px; padding:0.35rem 0.75rem;
+    font-size:0.78rem; font-weight:600;
+  }
+
+  .filter-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display:flex; gap:0.4rem; padding:0.6rem 1.1rem;
+    overflow-x:auto; scrollbar-width:none;
+  }
+  .filter-bar::-webkit-scrollbar { display:none; }
+
+  .filter-btn {
+    flex-shrink:0; padding:0.35rem 0.85rem;
+    border-radius:20px; border:1.5px solid var(--border);
+    background:transparent; color:var(--text-mid);
+    font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:500;
+    cursor:pointer; transition:all 0.15s; white-space:nowrap;
+  }
+
+  .filter-btn.active                           { background:var(--accent);  color:white; border-color:var(--accent);  }
+  .filter-btn[data-filter="S1"].active         { background:var(--s1);      color:white; border-color:var(--s1);      }
+  .filter-btn[data-filter="S2"].active         { background:var(--s2);      color:white; border-color:var(--s2);      }
+  .filter-btn[data-filter="S3"].active         { background:var(--s3);      color:white; border-color:var(--s3);      }
+  .filter-btn[data-filter="S4"].active         { background:var(--s4);      color:white; border-color:var(--s4);      }
+
+  #map { width:100%; height:52vw; min-height:230px; max-height:380px; }
+
+  .section-header {
+    display:flex; align-items:center; gap:0.5rem;
+    padding:1rem 1.25rem 0.6rem;
+  }
+  .section-header span {
+    font-size:0.68rem; font-weight:600;
+    letter-spacing:0.16em; text-transform:uppercase; color:var(--text-muted);
+    white-space:nowrap;
+  }
+  .section-line { flex:1; height:1px; background:var(--border); }
+
+  .trail-card {
+    display:flex; align-items:center;
+    padding:0.9rem 1.25rem;
+    border-bottom:1px solid var(--border);
+    cursor:pointer; background:var(--surface);
+    transition:background 0.12s; gap:0.85rem;
+  }
+  .trail-card:active { background:var(--bg2); }
+
+  .trail-num-bubble {
+    width:34px; height:34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700;
+    flex-shrink:0; color:white;
+  }
+
+  .trail-body { flex:1; min-width:0; }
+
+  .trail-name {
+    font-weight:600; font-size:0.95rem;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    color:var(--text); margin-bottom:0.25rem;
+  }
+
+  .trail-meta { display:flex; align-items:center; gap:0.45rem; }
+
+  .badge {
+    font-size:0.65rem; font-weight:700;
+    letter-spacing:0.06em; text-transform:uppercase;
+    padding:0.12rem 0.45rem; border-radius:4px;
+  }
+  .badge-s1 { background:rgba(61,140,90,0.15);  color:var(--s1); }
+  .badge-s2 { background:rgba(46,114,181,0.15); color:var(--s2); }
+  .badge-s3 { background:rgba(201,74,30,0.15);  color:var(--s3); }
+  .badge-s4 { background:rgba(26,26,26,0.12);   color:var(--s4); }
+
+  .status-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+  .status-dot.open     { background:var(--open); }
+  .status-dot.closed   { background:var(--closed); }
+  .status-dot.seasonal { background:var(--seasonal); }
+
+  .status-text { font-size:0.72rem; color:var(--text-muted); }
+  .trail-chevron { color:var(--border2); font-size:1.3rem; flex-shrink:0; }
+
+  .loading-banner {
+    text-align:center; padding:0.55rem;
+    font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--text-muted); background:var(--bg2); display:none;
+  }
+  .loading-banner.visible { display:block; }
+
+  /* ── DETAIL SHEET ── */
+  #sheet-overlay {
+    position:fixed; inset:0;
+    background:rgba(44,36,22,0.45);
+    z-index:499; display:none;
+    backdrop-filter:blur(2px);
+  }
+
+  #detail-sheet {
+    position:fixed; bottom:0; left:0; right:0;
+    background:var(--surface);
+    border-radius:18px 18px 0 0;
+    border-top:3px solid var(--accent);
+    padding:0 1.5rem 2.5rem;
+    z-index:500;
+    transform:translateY(100%);
+    transition:transform 0.32s cubic-bezier(0.22,0.9,0.3,1);
+    max-height:75vh; overflow-y:auto;
+  }
+  #detail-sheet.open { transform:translateY(0); }
+
+  .sheet-handle-wrap {
+    display:flex; justify-content:center;
+    padding:0.9rem 0 0.75rem;
+    position:sticky; top:0; background:var(--surface);
+    margin:0 -1.5rem;
+    padding-left:1.5rem; padding-right:1.5rem;
+    border-bottom:1px solid var(--border);
+    margin-bottom:1.25rem;
+  }
+
+  .sheet-handle { width:40px; height:4px; background:var(--border2); border-radius:2px; }
+
+  .sheet-header { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1rem; }
+
+  .sheet-num-big {
+    width:48px; height:48px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700;
+    color:white; flex-shrink:0;
+  }
+
+  .sheet-title-group { flex:1; }
+
+  .sheet-name {
+    font-family:'Playfair Display',serif;
+    font-size:1.5rem; font-weight:700; line-height:1.2;
+    margin-bottom:0.5rem; color:var(--text);
+  }
+
+  .sheet-badges { display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center; }
+
+  .sheet-status {
+    display:flex; align-items:center; gap:0.4rem;
+    font-size:0.72rem; font-weight:500;
+    padding:0.18rem 0.55rem; border-radius:20px; border:1.5px solid;
+  }
+  .sheet-status.open     { color:var(--open);     border-color:rgba(61,140,90,0.35);  background:rgba(61,140,90,0.08); }
+  .sheet-status.closed   { color:var(--closed);   border-color:rgba(201,74,30,0.35);  background:rgba(201,74,30,0.08); }
+  .sheet-status.seasonal { color:var(--seasonal); border-color:rgba(181,130,42,0.35); background:rgba(181,130,42,0.08); }
+
+  .sheet-notes {
+    font-size:0.88rem; color:var(--text-mid); line-height:1.65;
+    margin-bottom:1.25rem; padding:0.9rem 1rem;
+    background:var(--bg); border-radius:var(--radius-sm);
+    border-left:3px solid var(--border2);
+  }
+
+  .komoot-btn {
+    display:flex; align-items:center; justify-content:center; gap:0.6rem;
+    width:100%; padding:0.9rem;
+    background:var(--accent); color:white; border:none;
+    border-radius:var(--radius-sm);
+    font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:600;
+    text-decoration:none; cursor:pointer; transition:background 0.2s;
+  }
+  .komoot-btn:hover  { background:var(--accent2); }
+  .komoot-btn:active { opacity:0.88; }
+
+  .footer {
+    background:var(--surface); border-top:1px solid var(--border);
+    padding:1rem 1.25rem; text-align:center;
+    font-size:0.65rem; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--text-muted);
+  }
+
+  /* Custom map markers */
+  .trail-marker {
+    width:30px; height:30px;
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+    border:2px solid rgba(255,255,255,0.7);
+  }
+  .trail-marker span {
+    transform:rotate(45deg);
+    font-family:'Playfair Display',serif;
+    font-size:0.72rem; font-weight:700; color:white;
+  }
+
+  .leaflet-control-attribution { font-size:9px !important; }
+
+  /* ── GPX TOGGLE ── */
+  .gpx-toggle-wrap {
+    display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
+  }
+  .gpx-toggle-wrap span {
+    font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .gpx-switch {
+    position: relative; width: 36px; height: 20px;
+    display: inline-block; cursor: pointer;
+  }
+  .gpx-switch input { opacity: 0; width: 0; height: 0; }
+  .gpx-slider {
+    position: absolute; inset: 0;
+    background: var(--border2);
+    border-radius: 20px;
+    transition: background 0.2s;
+  }
+  .gpx-slider::before {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    left: 3px; top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .gpx-switch input:checked + .gpx-slider { background: var(--accent); }
+  .gpx-switch input:checked + .gpx-slider::before { transform: translateX(16px); }
+
+  /* GPX badge on trail cards */
+  .badge-gpx {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 0.1rem 0.4rem; border-radius: 4px;
+    background: rgba(61,107,58,0.1); color: var(--accent);
+    border: 1px solid rgba(61,107,58,0.25);
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ PASSWORD SCREEN ════════ -->
+<div id="pw-screen">
+  <div class="pw-icon">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="white">
+      <path d="M17 8C8 10 5.9 16.17 3.82 21H5.71c.6-1.38 1.26-2.71 2.06-3.87C9.51 21 12 21 12 21c4-8 10-8 10-8-.94.69-1.87 1.38-2.76 2H21c-.55-1.55-1.28-3.14-2.28-4.5-.32-.42-.67-.85-1.05-1.24.14-.19.27-.37.4-.56L17 8z"/>
+      <path d="M12 3L7 8l2.5 2.5L12 8l2.5 2.5L17 8 12 3z" opacity=".75"/>
+    </svg>
+  </div>
+  <div class="pw-logo">TÜ Trails</div>
+  <div class="pw-sub">Tübingen · Singletrail Map</div>
+  <div class="pw-card">
+    <div class="pw-label">Zugangspasswort</div>
+    <input type="password" id="pw-input" placeholder="Passwort eingeben…" autocomplete="off"/>
+    <button id="pw-btn">Zugang anfordern</button>
+    <div id="pw-error"></div>
+  </div>
+</div>
+
+<!-- ════════ MAIN APP ════════ -->
+<div id="app">
+
+  <div class="header">
+    <div class="header-brand">
+      <div class="header-icon">
+        <svg viewBox="0 0 24 24" fill="var(--accent)">
+          <path d="M17 8C8 10 5.9 16.17 3.82 21H5.71c.6-1.38 1.26-2.71 2.06-3.87C9.51 21 12 21 12 21c4-8 10-8 10-8-.94.69-1.87 1.38-2.76 2H21c-.55-1.55-1.28-3.14-2.28-4.5-.32-.42-.67-.85-1.05-1.24.14-.19.27-.37.4-.56L17 8z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="header-title">TÜ Trails</div>
+        <div class="header-sub">Singletrail Map</div>
+      </div>
+    </div>
+    <div class="trail-pill"><span id="visible-count">0</span> Trails</div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">🌲 Alle</button>
+    <button class="filter-btn" data-filter="open">✓ Open</button>
+    <button class="filter-btn" data-filter="S1">S1</button>
+    <button class="filter-btn" data-filter="S2">S2</button>
+    <button class="filter-btn" data-filter="S3">S3</button>
+    <button class="filter-btn" data-filter="S4">S4</button>
+  </div>
+
+  <div id="map"></div>
+  <div class="loading-banner" id="loading-banner">⟳ Trails werden geladen…</div>
+
+  <div>
+    <div class="section-header">
+      <span>Trail Übersicht</span>
+      <div class="section-line"></div>
+      <div class="gpx-toggle-wrap">
+        <span>GPX</span>
+        <label class="gpx-switch">
+          <input type="checkbox" id="gpx-toggle">
+          <span class="gpx-slider"></span>
+        </label>
+      </div>
+    </div>
+    <div id="trail-list-inner"></div>
+  </div>
+
+  <div class="footer">TÜ Trails · Nur für Vereinsmitglieder · Immer die Natur respektieren 🌿</div>
+</div>
+
+<!-- Detail Sheet -->
+<div id="sheet-overlay"></div>
+<div id="detail-sheet">
+  <div class="sheet-handle-wrap"><div class="sheet-handle"></div></div>
+  <div class="sheet-header">
+    <div class="sheet-num-big" id="sheet-num-big"></div>
+    <div class="sheet-title-group">
+      <div class="sheet-name" id="sheet-name"></div>
+      <div class="sheet-badges" id="sheet-badges"></div>
+    </div>
+  </div>
+  <div class="sheet-notes" id="sheet-notes"></div>
+  <a class="komoot-btn" id="komoot-link" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-4-4 1.41-1.41L11 13.17l6.59-6.59L19 8l-8 8z"/>
+    </svg>
+    Auf Komoot öffnen
+  </a>
+</div>
+
+<script>
+// ══════════════════════════════════════
+//  ⚙️  CONFIG – nur hier anpassen
+// ══════════════════════════════════════
+const CONFIG = {
+  // Passwort-Hash – niemals das Klartext-Passwort hier speichern!
+  // Hash neu erzeugen: simpleHash('deinPasswort') in der Browser-Konsole eingeben
+  passwordHash: 'e85b9b2c', // = trails2024
+
+  // Google Sheets CSV-Export-URL
+  // Anleitung: Datei → Im Web veröffentlichen → CSV → URL hier einfügen
+  // Leer lassen = Demo-Daten werden genutzt
+  googleSheetsUrl: '',
+
+  mapCenter: [48.521, 9.058],
+  mapZoom: 13
+};
+
+// ══════════════════════════════════════
+//  DEMO-DATEN
+// ══════════════════════════════════════
+const DEMO_TRAILS = [
+  { id:1, name:'Schönbuch Roller',  lat:48.5310, lng:9.0320, schwierigkeit:'S1', status:'open',     notes:'Flowiger Einstieg, ideal für Anfänger. Loamy Boden – nach Regen glitschig. Kein Bremsen in den Kurven!', komoot:'https://www.komoot.com' },
+  { id:2, name:'Steinlach Drop',    lat:48.5180, lng:9.0680, schwierigkeit:'S3', status:'open',     notes:'Technischer Trail mit mehreren optionalen Drops (max. 1,2 m). Helmet Pflicht. Nur bei trockenem Untergrund fahren.', komoot:'https://www.komoot.com', gpx:'trails/trail_02.gpx' },
+  { id:3, name:'Kirnbach Line',     lat:48.5250, lng:9.0450, schwierigkeit:'S2', status:'seasonal', notes:'Gesperrt November–März (Wildruhezone Rehwild). Schöner Herbst-Trail mit Wurzelsektionen und einem kleinen Roller am Ende.', komoot:'https://www.komoot.com' },
+  { id:4, name:'Wurmberg Black',    lat:48.5140, lng:9.0510, schwierigkeit:'S4', status:'closed',   notes:'Derzeit wegen Sturmschäden gesperrt. Sehr technisch – nur für Experten. Enger Durchstieg bei Baum km 0.8 beachten.', komoot:'https://www.komoot.com' },
+  { id:5, name:'Ammer Grind',       lat:48.5290, lng:9.0620, schwierigkeit:'S2', status:'open',     notes:'Mittellanger Trail entlang der Ammer. Guter Mix aus Flowsektionen und kleinen Sprüngen. Einstieg am Parkplatz Hirschau.', komoot:'https://www.komoot.com' },
+  { id:6, name:'Österberg Sweep',   lat:48.5160, lng:9.0430, schwierigkeit:'S1', status:'open',     notes:'Perfekter Warm-Up Trail. Breiter Weg, kaum technisch – schöne Aussicht Richtung Stiftskirche. Gut für Familien.', komoot:'https://www.komoot.com' },
+];
+
+const DIFF_COLORS   = { S1:'#3d8c5a', S2:'#2e72b5', S3:'#c94a1e', S4:'#333' };
+const STATUS_LABELS = { open:'Open', closed:'Closed', seasonal:'Saisonal' };
+const LS_KEY = 'tutrails_v2_auth';
+let map, trails = [], markers = {}, gpxLayers = {}, gpxCache = {}, gpxMode = false;
+
+// ══════════════════════════════════════
+//  PASSWORT – läuft auf HTTP + HTTPS
+// ══════════════════════════════════════
+function simpleHash(s) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h.toString(16);
+}
+
+function checkLogin() {
+  return localStorage.getItem(LS_KEY) === CONFIG.passwordHash;
+}
+
+function saveLogin() {
+  localStorage.setItem(LS_KEY, CONFIG.passwordHash);
+}
+
+if (checkLogin()) {
+  document.getElementById('pw-screen').style.display = 'none';
+  bootApp();
+} else {
+  document.getElementById('pw-btn').addEventListener('click', tryLogin);
+  document.getElementById('pw-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') tryLogin();
+    document.getElementById('pw-input').classList.remove('error');
+    document.getElementById('pw-error').textContent = '';
+  });
+}
+
+function tryLogin() {
+  const val = document.getElementById('pw-input').value.trim();
+  if (simpleHash(val) === CONFIG.passwordHash) {
+    saveLogin();
+    const s = document.getElementById('pw-screen');
+    s.style.transition = 'opacity 0.35s';
+    s.style.opacity = '0';
+    setTimeout(() => { s.style.display = 'none'; bootApp(); }, 360);
+  } else {
+    const inp = document.getElementById('pw-input');
+    inp.classList.add('error');
+    document.getElementById('pw-error').textContent = 'Falsches Passwort – frag einen der Trail-Jungs 🙈';
+    setTimeout(() => inp.classList.remove('error'), 400);
+  }
+}
+
+// ══════════════════════════════════════
+//  APP
+// ══════════════════════════════════════
+
+function bootApp() {
+  document.getElementById('app').style.display = 'flex';
+  initMap();
+  loadTrails();
+}
+
+function initMap() {
+  map = L.map('map', { center: CONFIG.mapCenter, zoom: CONFIG.mapZoom, zoomControl: false });
+  L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap | OpenTopoMap (CC-BY-SA)',
+    maxZoom: 17
+  }).addTo(map);
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
+}
+
+async function loadTrails() {
+  if (CONFIG.googleSheetsUrl) {
+    document.getElementById('loading-banner').classList.add('visible');
+    try {
+      const res = await fetch(CONFIG.googleSheetsUrl);
+      const csv = await res.text();
+      trails = parseCSV(csv);
+    } catch(e) {
+      console.warn('Sheet Fehler, nutze Demo-Daten:', e);
+      trails = DEMO_TRAILS;
+    }
+    document.getElementById('loading-banner').classList.remove('visible');
+  } else {
+    trails = DEMO_TRAILS;
+  }
+  render(trails);
+  setupFilters();
+}
+
+function parseCSV(csv) {
+  return csv.trim().split('\n').slice(1).map((line, i) => {
+    const cols = []; let cur = '', inQ = false;
+    for (const ch of line) {
+      if (ch === '"') { inQ = !inQ; }
+      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else cur += ch;
+    }
+    cols.push(cur.trim());
+    const [name, lat, lng, schwierigkeit, status, notes, komoot] = cols;
+    return { id: i+1, name, lat: parseFloat(lat), lng: parseFloat(lng),
+             schwierigkeit, status: (status||'').toLowerCase().trim(),
+             notes: notes||'', komoot: komoot||'#' };
+  }).filter(t => t.name && !isNaN(t.lat));
+}
+
+function render(list) {
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  markers = {};
+  document.getElementById('trail-list-inner').innerHTML = '';
+  document.getElementById('visible-count').textContent = list.length;
+
+  list.forEach(trail => {
+    const color = DIFF_COLORS[trail.schwierigkeit] || '#888';
+
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="trail-marker" style="background:${color}"><span>${trail.id}</span></div>`,
+      iconSize: [30,30], iconAnchor: [15,30]
+    });
+    const m = L.marker([trail.lat, trail.lng], { icon }).addTo(map);
+    m.on('click', () => openSheet(trail));
+    markers[trail.id] = m;
+
+    const gpxBadge = trail.gpx ? '<span class="badge-gpx">GPX</span>' : '';
+    const card = document.createElement('div');
+    card.className = 'trail-card';
+    card.innerHTML = `
+      <div class="trail-num-bubble" style="background:${color}">${trail.id}</div>
+      <div class="trail-body">
+        <div class="trail-name">${trail.name}</div>
+        <div class="trail-meta">
+          <span class="badge badge-${trail.schwierigkeit.toLowerCase()}">${trail.schwierigkeit}</span>
+          ${gpxBadge}
+          <span class="status-dot ${trail.status}"></span>
+          <span class="status-text">${STATUS_LABELS[trail.status] || trail.status}</span>
+        </div>
+      </div>
+      <div class="trail-chevron">›</div>
+    `;
+    card.addEventListener('click', () => openSheet(trail));
+    document.getElementById('trail-list-inner').appendChild(card);
+  });
+
+  updateGpxLayers(list);
+}
+
+function openSheet(trail) {
+  const color = DIFF_COLORS[trail.schwierigkeit] || '#888';
+  document.getElementById('sheet-num-big').style.background = color;
+  document.getElementById('sheet-num-big').textContent = trail.id;
+  document.getElementById('sheet-name').textContent = trail.name;
+  document.getElementById('sheet-notes').textContent = trail.notes || 'Keine weiteren Infos.';
+  document.getElementById('sheet-badges').innerHTML = `
+    <span class="badge badge-${trail.schwierigkeit.toLowerCase()}">${trail.schwierigkeit}</span>
+    <span class="sheet-status ${trail.status}">
+      <span class="status-dot ${trail.status}"></span>
+      ${STATUS_LABELS[trail.status] || trail.status}
+    </span>`;
+  const btn = document.getElementById('komoot-link');
+  const hasLink = trail.komoot && trail.komoot !== '#';
+  btn.href = hasLink ? trail.komoot : '#';
+  btn.style.display = hasLink ? 'flex' : 'none';
+  document.getElementById('detail-sheet').classList.add('open');
+  document.getElementById('sheet-overlay').style.display = 'block';
+  map.panTo([trail.lat, trail.lng], { animate: true });
+}
+
+function closeSheet() {
+  document.getElementById('detail-sheet').classList.remove('open');
+  document.getElementById('sheet-overlay').style.display = 'none';
+}
+
+document.getElementById('sheet-overlay').addEventListener('click', closeSheet);
+
+let touchStart = 0;
+const sheet = document.getElementById('detail-sheet');
+sheet.addEventListener('touchstart', e => { touchStart = e.touches[0].clientY; });
+sheet.addEventListener('touchend',   e => { if (e.changedTouches[0].clientY - touchStart > 55) closeSheet(); });
+
+function setupFilters() {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      let filtered = trails;
+      if      (f === 'open') filtered = trails.filter(t => t.status === 'open');
+      else if (f !== 'all')  filtered = trails.filter(t => t.schwierigkeit === f);
+      render(filtered);
+    });
+  });
+
+  document.getElementById('gpx-toggle').addEventListener('change', e => {
+    gpxMode = e.target.checked;
+    const activeBtn = document.querySelector('.filter-btn.active');
+    const f = activeBtn ? activeBtn.dataset.filter : 'all';
+    let filtered = trails;
+    if      (f === 'open') filtered = trails.filter(t => t.status === 'open');
+    else if (f !== 'all')  filtered = trails.filter(t => t.schwierigkeit === f);
+    render(filtered);
+  });
+}
+
+async function parseGpxFile(url) {
+  if (gpxCache[url]) return gpxCache[url];
+  try {
+    const res = await fetch(url);
+    const text = await res.text();
+    const doc = new DOMParser().parseFromString(text, 'application/xml');
+    const pts = doc.querySelectorAll('trkpt');
+    const latlngs = Array.from(pts).map(pt => [
+      parseFloat(pt.getAttribute('lat')),
+      parseFloat(pt.getAttribute('lon'))
+    ]).filter(c => !isNaN(c[0]) && !isNaN(c[1]));
+    gpxCache[url] = latlngs;
+    return latlngs;
+  } catch(e) {
+    console.warn('GPX Ladefehler:', url, e);
+    return null;
+  }
+}
+
+async function updateGpxLayers(list) {
+  // Remove layers for trails not in current list
+  Object.keys(gpxLayers).forEach(id => {
+    if (!list.find(t => t.id == id)) {
+      map.removeLayer(gpxLayers[id]);
+      delete gpxLayers[id];
+    }
+  });
+
+  if (!gpxMode) {
+    Object.values(gpxLayers).forEach(l => map.removeLayer(l));
+    gpxLayers = {};
+    return;
+  }
+
+  for (const trail of list) {
+    if (!trail.gpx) continue;
+    if (gpxLayers[trail.id]) continue; // already shown
+    const color = DIFF_COLORS[trail.schwierigkeit] || '#888';
+    const latlngs = await parseGpxFile(trail.gpx);
+    if (!latlngs || latlngs.length === 0) continue;
+    gpxLayers[trail.id] = L.polyline(latlngs, {
+      color, weight: 4, opacity: 0.85,
+      lineCap: 'round', lineJoin: 'round'
+    }).addTo(map);
+    gpxLayers[trail.id].on('click', () => openSheet(trail));
+  }
+}
+</script>
+</body>
+</html>
