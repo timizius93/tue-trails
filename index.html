@@ -460,7 +460,7 @@
         <div class="header-sub">Singletrail Map</div>
       </div>
     </div>
-    <div class="trail-pill"><span id="visible-count">0</span> Trails</div>
+    <div class="trail-pill"><span id="visible-count">0</span> offene Trails</div>
   </div>
 
   <div class="filter-bar">
@@ -608,8 +608,8 @@ function bootApp() {
 
 function initMap() {
   map = L.map('map', { center: CONFIG.mapCenter, zoom: CONFIG.mapZoom, zoomControl: false });
-  L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
-    attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
     maxZoom: 20
   }).addTo(map);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
@@ -666,7 +666,7 @@ function render(list) {
   Object.values(markers).forEach(m => map.removeLayer(m));
   markers = {};
   document.getElementById('trail-list-inner').innerHTML = '';
-  document.getElementById('visible-count').textContent = list.length;
+  document.getElementById('visible-count').textContent = trails.filter(t => t.status === 'open').length;
 
   list.forEach(trail => {
     const color = DIFF_COLORS[trail.schwierigkeit] || '#888';
