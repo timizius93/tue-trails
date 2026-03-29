@@ -397,46 +397,6 @@
 
   .leaflet-control-attribution { font-size:9px !important; }
 
-  /* ── GPX TOGGLE ── */
-  .gpx-toggle-wrap {
-    display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
-  }
-  .gpx-toggle-wrap span {
-    font-size: 0.68rem; font-weight: 600;
-    letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted);
-  }
-  .gpx-switch {
-    position: relative; width: 36px; height: 20px;
-    display: inline-block; cursor: pointer;
-  }
-  .gpx-switch input { opacity: 0; width: 0; height: 0; }
-  .gpx-slider {
-    position: absolute; inset: 0;
-    background: var(--border2);
-    border-radius: 20px;
-    transition: background 0.2s;
-  }
-  .gpx-slider::before {
-    content: '';
-    position: absolute;
-    width: 14px; height: 14px;
-    left: 3px; top: 3px;
-    background: white;
-    border-radius: 50%;
-    transition: transform 0.2s;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  }
-  .gpx-switch input:checked + .gpx-slider { background: var(--accent); }
-  .gpx-switch input:checked + .gpx-slider::before { transform: translateX(16px); }
-
-  /* GPX badge on trail cards */
-  .badge-gpx {
-    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em;
-    text-transform: uppercase; padding: 0.1rem 0.4rem; border-radius: 4px;
-    background: rgba(61,107,58,0.1); color: var(--accent);
-    border: 1px solid rgba(61,107,58,0.25);
-  }
-
   /* GPX trail info in detail sheet */
   .gpx-stats {
     display:flex; gap:1rem;
@@ -492,7 +452,7 @@
         <div class="header-sub">Singletrail Map</div>
       </div>
     </div>
-    <div class="trail-pill"><span id="visible-count">0</span> offene Trails</div>
+    <div class="trail-pill"><span id="visible-count">0</span> Trails</div>
   </div>
 
   <div class="filter-bar">
@@ -511,13 +471,6 @@
     <div class="section-header">
       <span>Trail Übersicht</span>
       <div class="section-line"></div>
-      <div class="gpx-toggle-wrap">
-        <span>GPX</span>
-        <label class="gpx-switch">
-          <input type="checkbox" id="gpx-toggle" checked>
-          <span class="gpx-slider"></span>
-        </label>
-      </div>
     </div>
     <div id="trail-list-inner"></div>
   </div>
@@ -590,7 +543,7 @@ const DEMO_TRAILS = [
 const DIFF_COLORS   = { S1:'#3d8c5a', S2:'#2e72b5', S3:'#c94a1e', S4:'#333' };
 const STATUS_LABELS = { open:'Open', closed:'Closed', seasonal:'Saisonal' };
 const LS_KEY = 'tutrails_v2_auth';
-let map, trails = [], markers = {}, gpxLayers = {}, gpxCache = {}, gpxMode = true;
+let map, trails = [], markers = {}, gpxLayers = {}, gpxCache = {};
 
 // ══════════════════════════════════════
 //  PASSWORT – läuft auf HTTP + HTTPS
@@ -781,28 +734,14 @@ async function loadGPX(trail) {
 function addGPXToMap(trail, pts) {
   if (gpxLayers[trail.id] || !markers[trail.id]) return;
   const color = DIFF_COLORS[trail.schwierigkeit] || '#888';
-  const line = L.polyline(pts, { color, weight: 4, opacity: 0.85, lineJoin: 'round', lineCap: 'round' });
+  const line = L.polyline(pts, { color, weight: 4, opacity: 0.85, lineJoin: 'round', lineCap: 'round' }).addTo(map);
   line.on('click', () => openSheet(trail));
-  const startM = L.circleMarker(pts[0], { radius: 6, fillColor: '#3d8c5a', color: 'white', weight: 2, fillOpacity: 1 });
+  const startM = L.circleMarker(pts[0], { radius: 6, fillColor: '#3d8c5a', color: 'white', weight: 2, fillOpacity: 1 }).addTo(map);
   startM.on('click', () => openSheet(trail));
-  const endM = L.circleMarker(pts[pts.length-1], { radius: 6, fillColor: '#c94a1e', color: 'white', weight: 2, fillOpacity: 1 });
+  const endM = L.circleMarker(pts[pts.length-1], { radius: 6, fillColor: '#c94a1e', color: 'white', weight: 2, fillOpacity: 1 }).addTo(map);
   endM.on('click', () => openSheet(trail));
   gpxLayers[trail.id] = { line, startM, endM, pts };
   trail._gpxPts = pts;
-  if (gpxMode) {
-    line.addTo(map); startM.addTo(map); endM.addTo(map);
-  }
-  // GPX-Badge auf Card setzen
-  const card = document.querySelector(`.trail-card[data-trail-id="${trail.id}"]`);
-  if (card) {
-    const meta = card.querySelector('.trail-meta');
-    if (meta && !meta.querySelector('.badge-gpx')) {
-      const badge = document.createElement('span');
-      badge.className = 'badge-gpx';
-      badge.textContent = 'GPX';
-      meta.insertBefore(badge, meta.children[1]);
-    }
-  }
 }
 
 function clearGPXLayers() {
@@ -817,7 +756,7 @@ function render(list) {
   Object.values(markers).forEach(m => map.removeLayer(m));
   markers = {};
   document.getElementById('trail-list-inner').innerHTML = '';
-  document.getElementById('visible-count').textContent = trails.filter(t => t.status === 'open').length;
+  document.getElementById('visible-count').textContent = list.length;
 
   list.forEach(trail => {
     const color = DIFF_COLORS[trail.schwierigkeit] || '#888';
@@ -833,7 +772,6 @@ function render(list) {
 
     const card = document.createElement('div');
     card.className = 'trail-card';
-    card.dataset.trailId = trail.id;
     card.innerHTML = `
       <div class="trail-num-bubble" style="background:${color}">${trail.id}</div>
       <div class="trail-body">
@@ -931,19 +869,6 @@ function setupFilters() {
       else if (f !== 'all')  filtered = trails.filter(t => t.schwierigkeit === f);
       render(filtered);
     });
-  });
-
-  document.getElementById('gpx-toggle').addEventListener('change', e => {
-    gpxMode = e.target.checked;
-    if (!gpxMode) {
-      Object.values(gpxLayers).forEach(({ line, startM, endM }) => {
-        map.removeLayer(line); map.removeLayer(startM); map.removeLayer(endM);
-      });
-    } else {
-      Object.values(gpxLayers).forEach(({ line, startM, endM }) => {
-        line.addTo(map); startM.addTo(map); endM.addTo(map);
-      });
-    }
   });
 }
 </script>
