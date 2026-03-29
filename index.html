@@ -569,11 +569,11 @@ const CONFIG = {
 //  DEMO-DATEN
 // ══════════════════════════════════════
 const DEMO_TRAILS = [
-  { id:1, name:'Schönbuch Roller',  lat:48.5310, lng:9.0320, schwierigkeit:'S1', status:'open',     notes:'Flowiger Einstieg, ideal für Anfänger. Loamy Boden – nach Regen glitschig. Kein Bremsen in den Kurven!', komoot:'https://www.komoot.com' },
-  { id:2, name:'Steinlach Drop',    lat:48.5180, lng:9.0680, schwierigkeit:'S3', status:'open',     notes:'Technischer Trail mit mehreren optionalen Drops (max. 1,2 m). Helmet Pflicht. Nur bei trockenem Untergrund fahren.', komoot:'https://www.komoot.com' },
+  { id:1, name:'Schönbuch Roller',  lat:48.5310, lng:9.0320, schwierigkeit:'S1', status:'open',     notes:'Flowiger Einstieg, ideal für Anfänger. Loamy Boden – nach Regen glitschig. Kein Bremsen in den Kurven!', komoot:'https://www.komoot.com', gpx:'schoenbuch-roller_01.gpx' },
+  { id:2, name:'Steinlach Drop',    lat:48.5180, lng:9.0680, schwierigkeit:'S3', status:'open',     notes:'Technischer Trail mit mehreren optionalen Drops (max. 1,2 m). Helmet Pflicht. Nur bei trockenem Untergrund fahren.', komoot:'https://www.komoot.com', gpx:'steinlach-drop_02.gpx' },
   { id:3, name:'Kirnbach Line',     lat:48.5250, lng:9.0450, schwierigkeit:'S2', status:'seasonal', notes:'Gesperrt November–März (Wildruhezone Rehwild). Schöner Herbst-Trail mit Wurzelsektionen und einem kleinen Roller am Ende.', komoot:'https://www.komoot.com' },
   { id:4, name:'Wurmberg Black',    lat:48.5140, lng:9.0510, schwierigkeit:'S4', status:'closed',   notes:'Derzeit wegen Sturmschäden gesperrt. Sehr technisch – nur für Experten. Enger Durchstieg bei Baum km 0.8 beachten.', komoot:'https://www.komoot.com' },
-  { id:5, name:'Ammer Grind',       lat:48.5290, lng:9.0620, schwierigkeit:'S2', status:'open',     notes:'Mittellanger Trail entlang der Ammer. Guter Mix aus Flowsektionen und kleinen Sprüngen. Einstieg am Parkplatz Hirschau.', komoot:'https://www.komoot.com' },
+  { id:5, name:'Ammer Grind',       lat:48.5290, lng:9.0620, schwierigkeit:'S2', status:'open',     notes:'Mittellanger Trail entlang der Ammer. Guter Mix aus Flowsektionen und kleinen Sprüngen. Einstieg am Parkplatz Hirschau.', komoot:'https://www.komoot.com', gpx:'ammer-grind_05.gpx' },
   { id:6, name:'Österberg Sweep',   lat:48.5160, lng:9.0430, schwierigkeit:'S1', status:'open',     notes:'Perfekter Warm-Up Trail. Breiter Weg, kaum technisch – schöne Aussicht Richtung Stiftskirche. Gut für Familien.', komoot:'https://www.komoot.com' },
 ];
 
@@ -707,30 +707,25 @@ function parseCSV(csv) {
   if (cur || row.length) { row.push(cur.trim()); if (row.some(c => c !== '')) rows.push(row); }
 
   return rows.slice(1).map((cols, i) => {
-
-    // Unterstützt zwei Formate – wird automatisch erkannt:
-    // NEU (mit id-Spalte): id, name, coords, schwierigkeit, status, notes, komoot
-    // ALT (ohne id-Spalte): name, coords, schwierigkeit, status, notes, komoot
-    // coords = "48.52135 9.02211" (Leerzeichen oder Komma zwischen lat/lng)
-    const hasId = !isNaN(parseInt(cols[0]));
-    const offset = hasId ? 1 : 0;
-    const id   = hasId ? parseInt(cols[0]) : i + 1;
-    const name = (cols[offset] || '').trim();
-    const coordRaw = (cols[offset + 1] || '').trim();
-    const parts = coordRaw.split(/[\s,]+/).filter(Boolean);
-    const lat  = parseFloat(parts[0]);
-    const lng  = parseFloat(parts[1]);
-    const schwierigkeit = (cols[offset + 2] || '').trim();
-    const status  = (cols[offset + 3] || '').toLowerCase().trim();
-    const notes   = cols[offset + 4] || '';
-    const komoot  = cols[offset + 5] || '#';
-
-    return { id, name, lat, lng, schwierigkeit, status, notes, komoot };
+    // Format: id, name, coords, schwierigkeit, status, notes, komoot, gpx(optional)
+    // coords = "48.52135 9.02211" (Leerzeichen oder Komma)
+    const [idRaw, name, coordRaw, schwierigkeit, status, notes, komoot, gpx] = cols;
+    const id = parseInt(idRaw) || i + 1;
+    const parts = (coordRaw || '').split(/[\s,]+/).filter(Boolean);
+    const lat = parseFloat(parts[0]);
+    const lng = parseFloat(parts[1]);
+    return {
+      id, name: (name || '').trim(), lat, lng,
+      schwierigkeit: (schwierigkeit || '').trim(),
+      status: (status || '').toLowerCase().trim(),
+      notes: notes || '', komoot: komoot || '#',
+      gpx: (gpx || '').trim() || null
+    };
   }).filter(t => t.name && !isNaN(t.lat));
 }
 
 // ══════════════════════════════════════
-//  GPX – automatisch via trail_XX.gpx
+//  GPX – Dateiname aus Sheet-Spalte "gpx"
 // ══════════════════════════════════════
 function parseGPX(xml) {
   const doc = new DOMParser().parseFromString(xml, 'text/xml');
@@ -757,10 +752,10 @@ function trailDistance(pts) {
 }
 
 async function loadGPX(trail) {
+  if (!trail.gpx) return null;
   if (trail.id in gpxCache) return gpxCache[trail.id];
-  const id = String(trail.id).padStart(2, '0');
   try {
-    const res = await fetch(`trails/trail_${id}.gpx`);
+    const res = await fetch(`trails/${trail.gpx}`);
     if (!res.ok) { gpxCache[trail.id] = null; return null; }
     const pts = parseGPX(await res.text());
     gpxCache[trail.id] = pts.length ? pts : null;
