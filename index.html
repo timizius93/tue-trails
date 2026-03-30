@@ -445,6 +445,34 @@
     text-decoration:none; cursor:pointer; transition:background 0.2s;
   }
   .gpx-download-btn:hover { background:var(--accent-lt); }
+
+  /* ── LOCATE BUTTON ── */
+  .locate-btn {
+    position: absolute;
+    bottom: 12px; left: 12px;
+    z-index: 1000;
+    width: 40px; height: 40px;
+    background: var(--surface);
+    border: 1.5px solid var(--border2);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: background 0.2s, border-color 0.2s;
+    color: var(--text-muted);
+  }
+  .locate-btn:hover { background: var(--accent-lt); border-color: var(--accent); color: var(--accent); }
+  .locate-btn.active { background: var(--accent-lt); border-color: var(--accent); color: var(--accent); }
+  .locate-btn.active svg { fill: var(--accent); }
+
+  /* User location dot */
+  .user-dot {
+    width: 16px; height: 16px;
+    background: #2979ff;
+    border: 2.5px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(41,121,255,0.25);
+  }
 </style>
 </head>
 <body>
@@ -494,7 +522,17 @@
     <button class="filter-btn" data-filter="S4">S4</button>
   </div>
 
-  <div id="map"></div>
+  <div id="map">
+    <button class="locate-btn" id="locate-btn" title="Meine Position">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <line x1="12" y1="2" x2="12" y2="6"/>
+        <line x1="12" y1="18" x2="12" y2="22"/>
+        <line x1="2" y1="12" x2="6" y2="12"/>
+        <line x1="18" y1="12" x2="22" y2="12"/>
+      </svg>
+    </button>
+  </div>
   <div class="loading-banner" id="loading-banner">⟳ Trails werden geladen…</div>
 
   <div>
@@ -502,9 +540,16 @@
       <span>Trail Übersicht</span>
       <div class="section-line"></div>
       <div class="gpx-toggle-wrap">
+        <span>Topo</span>
+        <label class="gpx-switch">
+          <input type="checkbox" id="map-toggle">
+          <span class="gpx-slider"></span>
+        </label>
+      </div>
+      <div class="gpx-toggle-wrap">
         <span>GPX</span>
         <label class="gpx-switch">
-          <input type="checkbox" id="gpx-toggle" checked>
+          <input type="checkbox" id="gpx-toggle">
           <span class="gpx-slider"></span>
         </label>
       </div>
@@ -580,7 +625,7 @@ const DEMO_TRAILS = [
 const DIFF_COLORS   = { S1:'#3d8c5a', S2:'#2e72b5', S3:'#c94a1e', S4:'#333' };
 const STATUS_LABELS = { open:'Open', closed:'Closed', seasonal:'Saisonal' };
 const LS_KEY = 'tutrails_v2_auth';
-let map, trails = [], markers = {}, gpxLayers = {}, gpxCache = {}, gpxMode = true;
+let map, trails = [], markers = {}, gpxLayers = {}, gpxCache = {}, gpxMode = false;
 
 // ══════════════════════════════════════
 //  PASSWORT – läuft auf HTTP + HTTPS
@@ -647,11 +692,28 @@ function bootApp() {
 function initMap() {
   map = L.map('map', { center: CONFIG.mapCenter, zoom: CONFIG.mapZoom, zoomControl: false });
 
-  // Minimalistischer Kartenstil – CartoDB Positron (hell, sauber, kein visueller Lärm)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  const tileCartoDB = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> © <a href="https://carto.com">CARTO</a>',
     maxZoom: 19
-  }).addTo(map);
+  });
+  const tileTopo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> © <a href="https://opentopomap.org">OpenTopoMap</a>',
+    maxZoom: 17
+  });
+  let activeBaseLayer = tileCartoDB;
+  tileCartoDB.addTo(map);
+
+  document.getElementById('map-toggle').addEventListener('change', e => {
+    if (e.target.checked) {
+      map.removeLayer(tileCartoDB);
+      tileTopo.addTo(map);
+      activeBaseLayer = tileTopo;
+    } else {
+      map.removeLayer(tileTopo);
+      tileCartoDB.addTo(map);
+      activeBaseLayer = tileCartoDB;
+    }
+  });
 
   L.control.zoom({ position: 'bottomright' }).addTo(map);
   map.invalidateSize();
@@ -928,6 +990,57 @@ function setupFilters() {
       else if (f !== 'all')  filtered = trails.filter(t => t.schwierigkeit === f);
       render(filtered);
     });
+  });
+
+  // ── LOCATE / LIVE TRACKING ──
+  let locateActive = false;
+  let locateWatchId = null;
+  let userMarker = null;
+  let userAccCircle = null;
+  let locateFirstFix = false;
+
+  const locateBtn = document.getElementById('locate-btn');
+
+  function stopLocate() {
+    locateActive = false;
+    locateFirstFix = false;
+    locateBtn.classList.remove('active');
+    if (locateWatchId !== null) { navigator.geolocation.clearWatch(locateWatchId); locateWatchId = null; }
+    if (userMarker)    { map.removeLayer(userMarker);    userMarker = null; }
+    if (userAccCircle) { map.removeLayer(userAccCircle); userAccCircle = null; }
+  }
+
+  function onLocateSuccess(pos) {
+    const { latitude: lat, longitude: lng, accuracy } = pos.coords;
+    const latlng = [lat, lng];
+
+    if (userAccCircle) { userAccCircle.setLatLng(latlng).setRadius(accuracy); }
+    else { userAccCircle = L.circle(latlng, { radius: accuracy, color: '#2979ff', fillColor: '#2979ff', fillOpacity: 0.1, weight: 1 }).addTo(map); }
+
+    if (userMarker) { userMarker.setLatLng(latlng); }
+    else {
+      const icon = L.divIcon({ className: '', html: '<div class="user-dot"></div>', iconSize: [16, 16], iconAnchor: [8, 8] });
+      userMarker = L.marker(latlng, { icon, zIndexOffset: 500 }).addTo(map);
+    }
+
+    if (!locateFirstFix) {
+      locateFirstFix = true;
+      map.setView(latlng, Math.max(map.getZoom(), 14), { animate: true });
+    }
+  }
+
+  function onLocateError(err) {
+    stopLocate();
+    if (err.code === err.PERMISSION_DENIED) alert('Standortzugriff verweigert.');
+  }
+
+  locateBtn.addEventListener('click', () => {
+    if (locateActive) { stopLocate(); return; }
+    if (!navigator.geolocation) { alert('Geolocation wird von diesem Browser nicht unterstützt.'); return; }
+    locateActive = true;
+    locateFirstFix = false;
+    locateBtn.classList.add('active');
+    locateWatchId = navigator.geolocation.watchPosition(onLocateSuccess, onLocateError, { enableHighAccuracy: true, maximumAge: 5000 });
   });
 
   document.getElementById('gpx-toggle').addEventListener('change', e => {
