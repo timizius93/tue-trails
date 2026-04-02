@@ -448,6 +448,150 @@
     border-radius: 50%;
     box-shadow: 0 0 0 3px rgba(41,121,255,0.25);
   }
+
+  /* ── HELP BUTTON ── */
+  .help-btn {
+    width: 32px; height: 32px;
+    background: var(--accent-lt);
+    border: 1.5px solid rgba(109,191,103,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--accent);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .help-btn:hover { background: var(--accent); color: #1a2e18; border-color: var(--accent); }
+
+  /* ── TUTORIAL OVERLAY ── */
+  .tutorial-overlay {
+    position: fixed; inset: 0;
+    z-index: 9000;
+    display: none;
+    transition: opacity 0.3s;
+  }
+  .tutorial-overlay.visible { display: block; }
+
+  .tutorial-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75);
+    transition: opacity 0.3s;
+  }
+
+  .tutorial-spotlight {
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 0 0 9999px rgba(0,0,0,0.75);
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    pointer-events: none;
+    z-index: 9001;
+  }
+
+  .tutorial-card {
+    position: absolute;
+    background: var(--surface);
+    border: 1.5px solid var(--border2);
+    border-radius: 14px;
+    padding: 1.4rem 1.3rem 1.1rem;
+    max-width: 320px;
+    width: calc(100vw - 2.5rem);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    z-index: 9002;
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .tutorial-card.center {
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 340px;
+  }
+
+  .tutorial-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--text); margin-bottom: 0.6rem;
+  }
+
+  .tutorial-card-text {
+    font-size: 0.84rem; color: var(--text-mid);
+    line-height: 1.6; margin-bottom: 1rem;
+  }
+
+  .tutorial-card-text ul {
+    list-style: none; padding: 0; margin: 0.4rem 0 0;
+  }
+  .tutorial-card-text ul li {
+    padding: 0.15rem 0;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .tutorial-card-text ul li::before {
+    content: '›';
+    position: absolute; left: 0;
+    color: var(--accent); font-weight: 700;
+  }
+
+  .tutorial-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .tutorial-dots {
+    display: flex; gap: 6px;
+  }
+  .tutorial-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--border2);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .tutorial-dot.active {
+    background: var(--accent);
+    transform: scale(1.3);
+  }
+
+  .tutorial-btns {
+    display: flex; gap: 0.5rem;
+  }
+
+  .tutorial-btn-skip {
+    background: none; border: none;
+    color: var(--text-muted); font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem; cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    transition: color 0.2s;
+  }
+  .tutorial-btn-skip:hover { color: var(--text); }
+
+  .tutorial-btn-next {
+    background: var(--accent); color: #1a2e18;
+    border: none; border-radius: 8px;
+    padding: 0.45rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .tutorial-btn-next:hover { background: var(--accent2); }
+
+  /* ── TUTORIAL ARROW ── */
+  .tutorial-arrow {
+    position: absolute;
+    z-index: 9002;
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .tutorial-arrow svg {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    animation: arrow-bounce 1.2s ease-in-out infinite;
+  }
+
+  @keyframes arrow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
 </style>
 </head>
 <body>
@@ -470,7 +614,10 @@
     <div class="header-brand">
       <img src="logos/Icon.png" alt="MTB Trails Tübingen" style="height: 36px; object-fit: contain;">
     </div>
-    <div class="trail-pill"><span id="visible-count">0</span> offene Trails</div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <div class="trail-pill"><span id="visible-count">0</span> offene Trails</div>
+      <button class="help-btn" id="help-btn" title="Tutorial anzeigen">?</button>
+    </div>
   </div>
 
   <div class="filter-bar">
@@ -550,6 +697,28 @@
     </svg>
     Auf Komoot öffnen
   </a>
+</div>
+
+<!-- ════════ TUTORIAL OVERLAY ════════ -->
+<div class="tutorial-overlay" id="tutorial-overlay">
+  <div class="tutorial-backdrop" id="tutorial-backdrop"></div>
+  <div class="tutorial-spotlight" id="tutorial-spotlight"></div>
+  <div class="tutorial-arrow" id="tutorial-arrow">
+    <svg width="28" height="42" viewBox="0 0 28 42" fill="none">
+      <path d="M14 0 L14 30 M4 20 L14 30 L24 20" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="tutorial-card" id="tutorial-card">
+    <div class="tutorial-card-title" id="tutorial-title"></div>
+    <div class="tutorial-card-text" id="tutorial-text"></div>
+    <div class="tutorial-footer">
+      <div class="tutorial-dots" id="tutorial-dots"></div>
+      <div class="tutorial-btns">
+        <button class="tutorial-btn-skip" id="tutorial-skip">Überspringen</button>
+        <button class="tutorial-btn-next" id="tutorial-next">Weiter</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -639,6 +808,7 @@ function bootApp() {
   requestAnimationFrame(() => {
     initMap();
     loadTrails();
+    checkAutoTutorial();
   });
 }
 
@@ -1020,6 +1190,183 @@ function setupFilters() {
       });
     }
   });
+}
+
+// ══════════════════════════════════════
+//  TUTORIAL
+// ══════════════════════════════════════
+const TUTORIAL_LS_KEY = 'tutrails_tutorial_done';
+
+const TUTORIAL_STEPS = [
+  {
+    title: 'Willkommen bei der Tübinger Trail-Map!',
+    html: 'Bitte behandelt diese Trail-Map mit dem nötigen Respekt und versendet die Zugangsdaten nicht.<br>Nur so können wir diese Trails möglichst lange und unproblematisch genießen.',
+    target: null // centered, no spotlight
+  },
+  {
+    title: 'Die Trail-Karte',
+    html: 'Hier findet ihr die Trail-Karte mit allen Trails als farbige Pins.<ul>' +
+      '<li>Trails nach Schwierigkeitsgrad filtern (S1–S4)</li>' +
+      '<li>Nur offene Trails anzeigen (Open-Filter)</li>' +
+      '<li>Topografische Karte aktivieren (Topo-Toggle)</li>' +
+      '<li>GPX-Routen einblenden (GPX-Toggle)</li>' +
+      '<li>Eigene Live-Position anzeigen (Standort-Symbol)</li></ul>',
+    target: '#map',
+    includeAbove: '.filter-bar',
+    cardPos: 'inside' // card centered inside the spotlight area
+  },
+  {
+    title: 'Die Trail-Liste',
+    html: 'Unter der Karte findet ihr die Trail-Liste.<ul>' +
+      '<li>Trail auswählen → wird auf der Karte angezeigt</li>' +
+      '<li>Beschreibung und Schwierigkeitsgrad einsehen</li>' +
+      '<li>Über den Button direkt zu Komoot wechseln</li></ul>',
+    target: '#trail-list-inner',
+    cardPos: 'inside'
+  },
+  {
+    title: 'Tipp: Als App speichern',
+    html: 'iOS-Nutzer können die Karte als App auf den Home-Bildschirm holen:<br>' +
+      'Link im Browser öffnen → Teilen-Symbol (Pfeil nach oben) → <strong>„Zum Home-Bildschirm"</strong>.<br><br>' +
+      'Viel Spaß auf den Trails! 🤘',
+    target: null
+  }
+];
+
+let tutorialStep = 0;
+
+function startTutorial() {
+  tutorialStep = 0;
+  const overlay = document.getElementById('tutorial-overlay');
+  overlay.classList.add('visible');
+  buildDots();
+  showTutorialStep();
+}
+
+function endTutorial() {
+  const overlay = document.getElementById('tutorial-overlay');
+  overlay.classList.remove('visible');
+  localStorage.setItem(TUTORIAL_LS_KEY, '1');
+}
+
+function buildDots() {
+  const container = document.getElementById('tutorial-dots');
+  container.innerHTML = '';
+  TUTORIAL_STEPS.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'tutorial-dot' + (i === 0 ? ' active' : '');
+    container.appendChild(dot);
+  });
+}
+
+function showTutorialStep() {
+  const step = TUTORIAL_STEPS[tutorialStep];
+  const card = document.getElementById('tutorial-card');
+  const spotlight = document.getElementById('tutorial-spotlight');
+  const arrow = document.getElementById('tutorial-arrow');
+  const backdrop = document.getElementById('tutorial-backdrop');
+  const nextBtn = document.getElementById('tutorial-next');
+
+  document.getElementById('tutorial-title').textContent = step.title;
+  document.getElementById('tutorial-text').innerHTML = step.html;
+
+  // Update dots
+  document.querySelectorAll('.tutorial-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === tutorialStep);
+  });
+
+  // Last step → button text
+  nextBtn.textContent = tutorialStep === TUTORIAL_STEPS.length - 1 ? 'Los geht\'s!' : 'Weiter';
+
+  if (!step.target) {
+    // Centered card, no spotlight
+    backdrop.style.display = 'block';
+    spotlight.style.display = 'none';
+    arrow.style.display = 'none';
+    card.classList.add('center');
+    card.style.left = '50%';
+    card.style.top = '50%';
+    card.style.transform = 'translate(-50%, -50%)';
+    card.style.bottom = '';
+  } else {
+    backdrop.style.display = 'none';
+    spotlight.style.display = 'block';
+    card.classList.remove('center');
+    card.style.transform = '';
+
+    // Get target element bounding rect
+    const targetEl = document.querySelector(step.target);
+    if (!targetEl) { endTutorial(); return; }
+
+    let rect = targetEl.getBoundingClientRect();
+
+    // Optionally include another element above (e.g. filter-bar for map step)
+    if (step.includeAbove) {
+      const aboveEl = document.querySelector(step.includeAbove);
+      if (aboveEl) {
+        const aboveRect = aboveEl.getBoundingClientRect();
+        rect = {
+          top: Math.min(rect.top, aboveRect.top),
+          left: Math.min(rect.left, aboveRect.left),
+          right: Math.max(rect.right, aboveRect.right),
+          bottom: Math.max(rect.bottom, aboveRect.bottom),
+          width: Math.max(rect.right, aboveRect.right) - Math.min(rect.left, aboveRect.left),
+          height: Math.max(rect.bottom, aboveRect.bottom) - Math.min(rect.top, aboveRect.top)
+        };
+      }
+    }
+
+    const pad = 6;
+    spotlight.style.top = (rect.top - pad) + 'px';
+    spotlight.style.left = (rect.left - pad) + 'px';
+    spotlight.style.width = (rect.width + pad * 2) + 'px';
+    spotlight.style.height = (rect.height + pad * 2) + 'px';
+
+    // Scroll target into view if needed
+    if (rect.top < 0 || rect.bottom > window.innerHeight) {
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => showTutorialStep(), 400);
+      return;
+    }
+
+    // Position card centered inside the spotlight area
+    arrow.style.display = 'none';
+    const centerY = rect.top + rect.height / 2;
+    card.style.top = centerY + 'px';
+    card.style.left = '50%';
+    card.style.transform = 'translate(-50%, -50%)';
+    card.style.bottom = '';
+    // Clamp so card doesn't go off-screen
+    const maxTop = window.innerHeight - 20;
+    const minTop = 20;
+    requestAnimationFrame(() => {
+      const cardRect = card.getBoundingClientRect();
+      if (cardRect.bottom > maxTop) {
+        card.style.top = (maxTop - cardRect.height / 2) + 'px';
+      }
+      if (cardRect.top < minTop) {
+        card.style.top = (minTop + cardRect.height / 2) + 'px';
+      }
+    });
+  }
+}
+
+// Tutorial event listeners
+document.getElementById('tutorial-next').addEventListener('click', () => {
+  tutorialStep++;
+  if (tutorialStep >= TUTORIAL_STEPS.length) { endTutorial(); }
+  else { showTutorialStep(); }
+});
+
+document.getElementById('tutorial-skip').addEventListener('click', endTutorial);
+document.getElementById('tutorial-backdrop').addEventListener('click', endTutorial);
+document.getElementById('help-btn').addEventListener('click', startTutorial);
+
+// Auto-start tutorial on first visit (called from bootApp after a short delay)
+function checkAutoTutorial() {
+  if (!localStorage.getItem(TUTORIAL_LS_KEY)) {
+    setTimeout(startTutorial, 800);
+  }
 }
 </script>
 </body>
