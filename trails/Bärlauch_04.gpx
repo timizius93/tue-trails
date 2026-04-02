@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:26.275Z</time>
+	</metadata>
+<trk>
+	<name>Bärlauch Trail</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5380802" lon="9.1063582">
+	<ele>366.97</ele>
+</trkpt>
+<trkpt lat="48.5383852" lon="9.1071361">
+	<ele>366.36</ele>
+</trkpt>
+<trkpt lat="48.5385908" lon="9.1075269">
+	<ele>366.03</ele>
+</trkpt>
+<trkpt lat="48.5387355" lon="9.1079717">
+	<ele>365.69</ele>
+</trkpt>
+<trkpt lat="48.5388278" lon="9.1083850">
+	<ele>365.40</ele>
+</trkpt>
+<trkpt lat="48.5389086" lon="9.1086448">
+	<ele>365.17</ele>
+</trkpt>
+<trkpt lat="48.5389980" lon="9.1088169">
+	<ele>364.65</ele>
+</trkpt>
+<trkpt lat="48.5389963" lon="9.1091482">
+	<ele>361.02</ele>
+</trkpt>
+<trkpt lat="48.5390734" lon="9.1093226">
+	<ele>360.11</ele>
+</trkpt>
+<trkpt lat="48.5391707" lon="9.1094563">
+	<ele>360.13</ele>
+</trkpt>
+<trkpt lat="48.5391707" lon="9.1097087">
+	<ele>357.58</ele>
+</trkpt>
+<trkpt lat="48.5392430" lon="9.1099724">
+	<ele>355.66</ele>
+</trkpt>
+<trkpt lat="48.5393191" lon="9.1102248">
+	<ele>353.17</ele>
+</trkpt>
+<trkpt lat="48.5394787" lon="9.1103227">
+	<ele>354.07</ele>
+</trkpt>
+<trkpt lat="48.5396558" lon="9.1104094">
+	<ele>355.40</ele>
+</trkpt>
+<trkpt lat="48.5397980" lon="9.1105605">
+	<ele>355.77</ele>
+</trkpt>
+<trkpt lat="48.5399251" lon="9.1107312">
+	<ele>356.35</ele>
+</trkpt>
+<trkpt lat="48.5399784" lon="9.1110180">
+	<ele>355.83</ele>
+</trkpt>
+<trkpt lat="48.5399314" lon="9.1113380">
+	<ele>354.11</ele>
+</trkpt>
+<trkpt lat="48.5399392" lon="9.1115869">
+	<ele>353.78</ele>
+</trkpt>
+<trkpt lat="48.5398529" lon="9.1118666">
+	<ele>350.54</ele>
+</trkpt>
+<trkpt lat="48.5397964" lon="9.1122056">
+	<ele>347.86</ele>
+</trkpt>
+<trkpt lat="48.5397352" lon="9.1124995">
+	<ele>344.65</ele>
+</trkpt>
+<trkpt lat="48.5397540" lon="9.1128219">
+	<ele>342.86</ele>
+</trkpt>
+<trkpt lat="48.5396928" lon="9.1130755">
+	<ele>338.23</ele>
+</trkpt>
+<trkpt lat="48.5398029" lon="9.1135533">
+	<ele>338.05</ele>
+</trkpt>
+<trkpt lat="48.5398311" lon="9.1139674">
+	<ele>334.79</ele>
+</trkpt>
+<trkpt lat="48.5399037" lon="9.1143637">
+	<ele>330.20</ele>
+</trkpt>
+<trkpt lat="48.5399693" lon="9.1147459">
+	<ele>323.25</ele>
+</trkpt>
+<trkpt lat="48.5397748" lon="9.1149335">
+	<ele>318.07</ele>
+</trkpt>
+<trkpt lat="48.5396451" lon="9.1150490">
+	<ele>315.96</ele>
+</trkpt>
+<trkpt lat="48.5396014" lon="9.1152518">
+	<ele>315.70</ele>
+</trkpt>
+<trkpt lat="48.5394726" lon="9.1154399">
+	<ele>314.71</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

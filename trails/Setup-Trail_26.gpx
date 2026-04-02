@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="https://www.komoot.de" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Setup-Trail_26</name>
+    <author>
+      <link href="https://www.komoot.de">
+        <text>komoot</text>
+        <type>text/html</type>
+      </link>
+    </author>
+  </metadata>
+  <trk>
+    <name>Setup-Trail_26</name>
+    <trkseg>
+      <trkpt lat="48.544215" lon="9.002077">
+        <ele>440.432284</ele>
+        <time>2026-04-02T12:23:20.298Z</time>
+      </trkpt>
+      <trkpt lat="48.544210" lon="9.001981">
+        <ele>440.432284</ele>
+        <time>2026-04-02T12:23:27.286Z</time>
+      </trkpt>
+      <trkpt lat="48.544412" lon="9.001537">
+        <ele>440.432284</ele>
+        <time>2026-04-02T12:24:06.902Z</time>
+      </trkpt>
+      <trkpt lat="48.544508" lon="9.001151">
+        <ele>440.432284</ele>
+        <time>2026-04-02T12:24:37.976Z</time>
+      </trkpt>
+      <trkpt lat="48.544492" lon="9.000851">
+        <ele>440.432284</ele>
+        <time>2026-04-02T12:25:00.979Z</time>
+      </trkpt>
+      <trkpt lat="48.544405" lon="9.000578">
+        <ele>438.566628</ele>
+        <time>2026-04-02T12:25:24.478Z</time>
+      </trkpt>
+      <trkpt lat="48.544274" lon="9.000340">
+        <ele>436.595227</ele>
+        <time>2026-04-02T12:25:48.752Z</time>
+      </trkpt>
+      <trkpt lat="48.544146" lon="9.000184">
+        <ele>435.012886</ele>
+        <time>2026-04-02T12:26:08.325Z</time>
+      </trkpt>
+      <trkpt lat="48.543869" lon="8.999965">
+        <ele>432.004925</ele>
+        <time>2026-04-02T12:26:46.024Z</time>
+      </trkpt>
+      <trkpt lat="48.543614" lon="8.999959">
+        <ele>429.551314</ele>
+        <time>2026-04-02T12:27:17.106Z</time>
+      </trkpt>
+      <trkpt lat="48.543486" lon="8.999906">
+        <ele>428.274414</ele>
+        <time>2026-04-02T12:27:33.266Z</time>
+      </trkpt>
+      <trkpt lat="48.543036" lon="8.999246">
+        <ele>423.127831</ele>
+        <time>2026-04-02T12:28:48.953Z</time>
+      </trkpt>
+      <trkpt lat="48.542773" lon="8.998979">
+        <ele>423.127831</ele>
+        <time>2026-04-02T12:29:26.309Z</time>
+      </trkpt>
+      <trkpt lat="48.542189" lon="8.998835">
+        <ele>423.127831</ele>
+        <time>2026-04-02T12:30:33.770Z</time>
+      </trkpt>
+      <trkpt lat="48.542131" lon="8.998737">
+        <ele>423.127831</ele>
+        <time>2026-04-02T12:30:43.333Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

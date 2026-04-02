@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:26.867Z</time>
+	</metadata>
+<trk>
+	<name>Wurzelmassaker</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5517984" lon="9.0734461">
+	<ele>397.13</ele>
+</trkpt>
+<trkpt lat="48.5517441" lon="9.0734386">
+	<ele>395.64</ele>
+</trkpt>
+<trkpt lat="48.5516905" lon="9.0734088">
+	<ele>393.77</ele>
+</trkpt>
+<trkpt lat="48.5516070" lon="9.0733966">
+	<ele>391.12</ele>
+</trkpt>
+<trkpt lat="48.5515446" lon="9.0734244">
+	<ele>389.46</ele>
+</trkpt>
+<trkpt lat="48.5514858" lon="9.0734549">
+	<ele>387.80</ele>
+</trkpt>
+<trkpt lat="48.5514211" lon="9.0735098">
+	<ele>386.04</ele>
+</trkpt>
+<trkpt lat="48.5513556" lon="9.0735600">
+	<ele>383.97</ele>
+</trkpt>
+<trkpt lat="48.5512860" lon="9.0736102">
+	<ele>381.54</ele>
+</trkpt>
+<trkpt lat="48.5512119" lon="9.0736610">
+	<ele>378.75</ele>
+</trkpt>
+<trkpt lat="48.5511280" lon="9.0737255">
+	<ele>375.45</ele>
+</trkpt>
+<trkpt lat="48.5510530" lon="9.0737851">
+	<ele>372.41</ele>
+</trkpt>
+<trkpt lat="48.5509776" lon="9.0738136">
+	<ele>369.38</ele>
+</trkpt>
+<trkpt lat="48.5509076" lon="9.0738435">
+	<ele>366.71</ele>
+</trkpt>
+<trkpt lat="48.5508434" lon="9.0738367">
+	<ele>364.52</ele>
+</trkpt>
+<trkpt lat="48.5507778" lon="9.0738618">
+	<ele>362.39</ele>
+</trkpt>
+<trkpt lat="48.5506939" lon="9.0739215">
+	<ele>359.69</ele>
+</trkpt>
+<trkpt lat="48.5505956" lon="9.0740028">
+	<ele>356.67</ele>
+</trkpt>
+<trkpt lat="48.5505040" lon="9.0740781">
+	<ele>354.07</ele>
+</trkpt>
+<trkpt lat="48.5504438" lon="9.0741242">
+	<ele>352.49</ele>
+</trkpt>
+<trkpt lat="48.5503545" lon="9.0741697">
+	<ele>350.40</ele>
+</trkpt>
+<trkpt lat="48.5502643" lon="9.0741900">
+	<ele>348.54</ele>
+</trkpt>
+<trkpt lat="48.5501844" lon="9.0741771">
+	<ele>347.08</ele>
+</trkpt>
+<trkpt lat="48.5501166" lon="9.0741988">
+	<ele>345.86</ele>
+</trkpt>
+<trkpt lat="48.5500506" lon="9.0742917">
+	<ele>344.57</ele>
+</trkpt>
+<trkpt lat="48.5500097" lon="9.0743650">
+	<ele>343.72</ele>
+</trkpt>
+<trkpt lat="48.5499509" lon="9.0743887">
+	<ele>342.83</ele>
+</trkpt>
+<trkpt lat="48.5498822" lon="9.0744165">
+	<ele>341.92</ele>
+</trkpt>
+<trkpt lat="48.5498127" lon="9.0744233">
+	<ele>341.18</ele>
+</trkpt>
+<trkpt lat="48.5497161" lon="9.0744512">
+	<ele>340.83</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

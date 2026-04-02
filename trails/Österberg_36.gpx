@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T15:10:21.675Z</time>
+	</metadata>
+<trk>
+	<name>Österberg Trail</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5245104" lon="9.0758944">
+	<ele>376.76</ele>
+</trkpt>
+<trkpt lat="48.5244344" lon="9.0756646">
+	<ele>382.01</ele>
+</trkpt>
+<trkpt lat="48.5243882" lon="9.0754800">
+	<ele>385.27</ele>
+</trkpt>
+<trkpt lat="48.5243704" lon="9.0753109">
+	<ele>387.21</ele>
+</trkpt>
+<trkpt lat="48.5244236" lon="9.0750953">
+	<ele>387.75</ele>
+</trkpt>
+<trkpt lat="48.5245452" lon="9.0748966">
+	<ele>387.37</ele>
+</trkpt>
+<trkpt lat="48.5246747" lon="9.0747374">
+	<ele>387.50</ele>
+</trkpt>
+<trkpt lat="48.5248216" lon="9.0745715">
+	<ele>388.37</ele>
+</trkpt>
+<trkpt lat="48.5249731" lon="9.0745116">
+	<ele>386.98</ele>
+</trkpt>
+<trkpt lat="48.5251290" lon="9.0743317">
+	<ele>387.25</ele>
+</trkpt>
+<trkpt lat="48.5252793" lon="9.0741590">
+	<ele>386.23</ele>
+</trkpt>
+<trkpt lat="48.5253984" lon="9.0739586">
+	<ele>386.26</ele>
+</trkpt>
+<trkpt lat="48.5254928" lon="9.0737763">
+	<ele>387.31</ele>
+</trkpt>
+<trkpt lat="48.5256007" lon="9.0735989">
+	<ele>388.56</ele>
+</trkpt>
+<trkpt lat="48.5257398" lon="9.0733526">
+	<ele>390.10</ele>
+</trkpt>
+<trkpt lat="48.5259509" lon="9.0731087">
+	<ele>386.36</ele>
+</trkpt>
+<trkpt lat="48.5260557" lon="9.0728769">
+	<ele>383.34</ele>
+</trkpt>
+<trkpt lat="48.5260773" lon="9.0726005">
+	<ele>383.16</ele>
+</trkpt>
+<trkpt lat="48.5261091" lon="9.0722718">
+	<ele>383.34</ele>
+</trkpt>
+<trkpt lat="48.5261488" lon="9.0721938">
+	<ele>382.28</ele>
+</trkpt>
+<trkpt lat="48.5262116" lon="9.0722521">
+	<ele>379.77</ele>
+</trkpt>
+<trkpt lat="48.5262989" lon="9.0723733">
+	<ele>375.88</ele>
+</trkpt>
+<trkpt lat="48.5263709" lon="9.0727154">
+	<ele>371.02</ele>
+</trkpt>
+<trkpt lat="48.5264297" lon="9.0728033">
+	<ele>368.00</ele>
+</trkpt>
+<trkpt lat="48.5264715" lon="9.0727442">
+	<ele>366.66</ele>
+</trkpt>
+<trkpt lat="48.5265433" lon="9.0726151">
+	<ele>364.71</ele>
+</trkpt>
+<trkpt lat="48.5265996" lon="9.0726741">
+	<ele>362.10</ele>
+</trkpt>
+<trkpt lat="48.5266415" lon="9.0728335">
+	<ele>359.23</ele>
+</trkpt>
+<trkpt lat="48.5266535" lon="9.0731376">
+	<ele>355.84</ele>
+</trkpt>
+<trkpt lat="48.5266553" lon="9.0732846">
+	<ele>354.05</ele>
+</trkpt>
+<trkpt lat="48.5267063" lon="9.0733123">
+	<ele>351.82</ele>
+</trkpt>
+<trkpt lat="48.5267650" lon="9.0732845">
+	<ele>350.02</ele>
+</trkpt>
+<trkpt lat="48.5268387" lon="9.0732593">
+	<ele>347.64</ele>
+</trkpt>
+<trkpt lat="48.5268437" lon="9.0733512">
+	<ele>346.34</ele>
+</trkpt>
+<trkpt lat="48.5268183" lon="9.0734906">
+	<ele>345.37</ele>
+</trkpt>
+<trkpt lat="48.5268133" lon="9.0736109">
+	<ele>343.78</ele>
+</trkpt>
+<trkpt lat="48.5268741" lon="9.0736092">
+	<ele>341.68</ele>
+</trkpt>
+<trkpt lat="48.5269316" lon="9.0735257">
+	<ele>340.91</ele>
+</trkpt>
+<trkpt lat="48.5269930" lon="9.0734514">
+	<ele>339.84</ele>
+</trkpt>
+<trkpt lat="48.5270478" lon="9.0735265">
+	<ele>337.01</ele>
+</trkpt>
+<trkpt lat="48.5270494" lon="9.0736451">
+	<ele>335.25</ele>
+</trkpt>
+<trkpt lat="48.5271180" lon="9.0736777">
+	<ele>332.60</ele>
+</trkpt>
+<trkpt lat="48.5271904" lon="9.0735883">
+	<ele>331.72</ele>
+</trkpt>
+<trkpt lat="48.5273143" lon="9.0734238">
+	<ele>330.44</ele>
+</trkpt>
+<trkpt lat="48.5274079" lon="9.0732934">
+	<ele>329.39</ele>
+</trkpt>
+<trkpt lat="48.5275390" lon="9.0731605">
+	<ele>327.51</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

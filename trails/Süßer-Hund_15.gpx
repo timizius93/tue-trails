@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:27.576Z</time>
+	</metadata>
+<trk>
+	<name>Süßer Hund</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5452393" lon="9.0675546">
+	<ele>452.51</ele>
+</trkpt>
+<trkpt lat="48.5452617" lon="9.0676669">
+	<ele>451.72</ele>
+</trkpt>
+<trkpt lat="48.5452883" lon="9.0677774">
+	<ele>450.89</ele>
+</trkpt>
+<trkpt lat="48.5453138" lon="9.0678397">
+	<ele>450.31</ele>
+</trkpt>
+<trkpt lat="48.5453404" lon="9.0679366">
+	<ele>449.47</ele>
+</trkpt>
+<trkpt lat="48.5453471" lon="9.0680879">
+	<ele>448.22</ele>
+</trkpt>
+<trkpt lat="48.5452976" lon="9.0682754">
+	<ele>445.67</ele>
+</trkpt>
+<trkpt lat="48.5452840" lon="9.0685859">
+	<ele>442.51</ele>
+</trkpt>
+<trkpt lat="48.5451150" lon="9.0691925">
+	<ele>436.56</ele>
+</trkpt>
+<trkpt lat="48.5449957" lon="9.0698632">
+	<ele>430.57</ele>
+</trkpt>
+</trkseg>
+<trkseg>
+<trkpt lat="48.5448540" lon="9.0700701">
+	<ele>428.35</ele>
+</trkpt>
+<trkpt lat="48.5448229" lon="9.0704063">
+	<ele>425.88</ele>
+</trkpt>
+<trkpt lat="48.5448986" lon="9.0707618">
+	<ele>422.89</ele>
+</trkpt>
+<trkpt lat="48.5448394" lon="9.0709954">
+	<ele>420.37</ele>
+</trkpt>
+<trkpt lat="48.5447582" lon="9.0712449">
+	<ele>417.30</ele>
+</trkpt>
+<trkpt lat="48.5446577" lon="9.0714757">
+	<ele>414.10</ele>
+</trkpt>
+<trkpt lat="48.5446729" lon="9.0716773">
+	<ele>411.24</ele>
+</trkpt>
+<trkpt lat="48.5444349" lon="9.0722031">
+	<ele>403.95</ele>
+</trkpt>
+<trkpt lat="48.5443790" lon="9.0724676">
+	<ele>399.75</ele>
+</trkpt>
+<trkpt lat="48.5442188" lon="9.0729270">
+	<ele>389.59</ele>
+</trkpt>
+<trkpt lat="48.5441405" lon="9.0730952">
+	<ele>384.99</ele>
+</trkpt>
+<trkpt lat="48.5440461" lon="9.0733109">
+	<ele>378.72</ele>
+</trkpt>
+<trkpt lat="48.5439187" lon="9.0734071">
+	<ele>374.70</ele>
+</trkpt>
+<trkpt lat="48.5438030" lon="9.0735087">
+	<ele>370.24</ele>
+</trkpt>
+<trkpt lat="48.5437570" lon="9.0736995">
+	<ele>364.61</ele>
+</trkpt>
+<trkpt lat="48.5437311" lon="9.0738581">
+	<ele>360.22</ele>
+</trkpt>
+<trkpt lat="48.5436520" lon="9.0740239">
+	<ele>355.00</ele>
+</trkpt>
+<trkpt lat="48.5435965" lon="9.0741985">
+	<ele>350.49</ele>
+</trkpt>
+<trkpt lat="48.5435175" lon="9.0743804">
+	<ele>346.09</ele>
+</trkpt>
+<trkpt lat="48.5434821" lon="9.0745978">
+	<ele>342.27</ele>
+</trkpt>
+<trkpt lat="48.5434514" lon="9.0747101">
+	<ele>340.52</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

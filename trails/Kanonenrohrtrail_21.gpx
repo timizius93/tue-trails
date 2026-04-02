@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:28.411Z</time>
+	</metadata>
+<trk>
+	<name>Kanonenrohrtrail</name>
+	<link href="https://bikerouter.de/#map=19/48.52935/9.00828/OpenTopoMap,Strava%20Heatmap%20Bike,route-quality&amp;lonlats=9.007614,48.533719;9.007593,48.533692;9.007582,48.533632;9.007593,48.533541;9.007604,48.533493;9.007604,48.53341;9.007604,48.533315;9.007617,48.5332;9.007638,48.533097;9.007646,48.533049;9.007676,48.53297;9.007773,48.532835;9.007858,48.532682;9.008019,48.532535;9.008132,48.53243;9.008282,48.532247;9.008314,48.53213;9.008424,48.531963;9.00847,48.531822;9.008577,48.5317;9.008617,48.531552;9.008599,48.531417;9.008591,48.531282;9.008566,48.53112;9.008561,48.531001;9.00858,48.530834;9.008625,48.53066;9.008644,48.530598;9.008676,48.530507;9.008733,48.530416;9.008741,48.530349;9.008722,48.530297;9.008743,48.530143;9.008768,48.530009;9.00876,48.529917;9.008752,48.529789;9.008752,48.529681;9.008786,48.529508;9.008867,48.529351;9.008961,48.529243;9.00906,48.529123;9.009165,48.529069;9.009277,48.528925;9.00935,48.528845;9.009355,48.528819&amp;straight=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43&amp;profile=mtb-zossebart">
+		<text>bikerouter.de</text>
+	</link>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5337190" lon="9.0076143">
+	<ele>431.39</ele>
+</trkpt>
+<trkpt lat="48.5336924" lon="9.0075928">
+	<ele>430.85</ele>
+</trkpt>
+<trkpt lat="48.5336317" lon="9.0075821">
+	<ele>430.42</ele>
+</trkpt>
+<trkpt lat="48.5335411" lon="9.0075928">
+	<ele>430.21</ele>
+</trkpt>
+<trkpt lat="48.5334931" lon="9.0076035">
+	<ele>430.09</ele>
+</trkpt>
+<trkpt lat="48.5334096" lon="9.0076035">
+	<ele>429.29</ele>
+</trkpt>
+<trkpt lat="48.5333154" lon="9.0076035">
+	<ele>428.11</ele>
+</trkpt>
+<trkpt lat="48.5331999" lon="9.0076169">
+	<ele>426.36</ele>
+</trkpt>
+<trkpt lat="48.5330966" lon="9.0076384">
+	<ele>424.47</ele>
+</trkpt>
+<trkpt lat="48.5330486" lon="9.0076464">
+	<ele>423.41</ele>
+</trkpt>
+<trkpt lat="48.5329704" lon="9.0076759">
+	<ele>421.87</ele>
+</trkpt>
+<trkpt lat="48.5328353" lon="9.0077725">
+	<ele>419.75</ele>
+</trkpt>
+<trkpt lat="48.5326825" lon="9.0078583">
+	<ele>416.63</ele>
+</trkpt>
+<trkpt lat="48.5325350" lon="9.0080193">
+	<ele>415.25</ele>
+</trkpt>
+<trkpt lat="48.5324301" lon="9.0081319">
+	<ele>414.48</ele>
+</trkpt>
+<trkpt lat="48.5322471" lon="9.0082821">
+	<ele>412.33</ele>
+</trkpt>
+<trkpt lat="48.5321298" lon="9.0083143">
+	<ele>409.82</ele>
+</trkpt>
+<trkpt lat="48.5319627" lon="9.0084243">
+	<ele>408.09</ele>
+</trkpt>
+<trkpt lat="48.5318223" lon="9.0084699">
+	<ele>406.04</ele>
+</trkpt>
+<trkpt lat="48.5316997" lon="9.0085772">
+	<ele>406.57</ele>
+</trkpt>
+<trkpt lat="48.5315522" lon="9.0086174">
+	<ele>405.17</ele>
+</trkpt>
+<trkpt lat="48.5314171" lon="9.0085986">
+	<ele>402.44</ele>
+</trkpt>
+<trkpt lat="48.5312820" lon="9.0085906">
+	<ele>400.18</ele>
+</trkpt>
+<trkpt lat="48.5311203" lon="9.0085664">
+	<ele>397.11</ele>
+</trkpt>
+<trkpt lat="48.5310012" lon="9.0085611">
+	<ele>395.25</ele>
+</trkpt>
+<trkpt lat="48.5308342" lon="9.0085799">
+	<ele>393.32</ele>
+</trkpt>
+<trkpt lat="48.5306600" lon="9.0086254">
+	<ele>391.88</ele>
+</trkpt>
+<trkpt lat="48.5305975" lon="9.0086442">
+	<ele>391.38</ele>
+</trkpt>
+<trkpt lat="48.5305069" lon="9.0086764">
+	<ele>390.73</ele>
+</trkpt>
+<trkpt lat="48.5304163" lon="9.0087327">
+	<ele>390.62</ele>
+</trkpt>
+<trkpt lat="48.5303488" lon="9.0087408">
+	<ele>389.58</ele>
+</trkpt>
+<trkpt lat="48.5302973" lon="9.0087220">
+	<ele>388.16</ele>
+</trkpt>
+<trkpt lat="48.5301428" lon="9.0087435">
+	<ele>385.79</ele>
+</trkpt>
+<trkpt lat="48.5300094" lon="9.0087676">
+	<ele>383.77</ele>
+</trkpt>
+<trkpt lat="48.5299170" lon="9.0087596">
+	<ele>381.86</ele>
+</trkpt>
+<trkpt lat="48.5297891" lon="9.0087515">
+	<ele>379.27</ele>
+</trkpt>
+<trkpt lat="48.5296807" lon="9.0087515">
+	<ele>377.18</ele>
+</trkpt>
+<trkpt lat="48.5295083" lon="9.0087864">
+	<ele>374.17</ele>
+</trkpt>
+<trkpt lat="48.5293506" lon="9.0088668">
+	<ele>371.54</ele>
+</trkpt>
+<trkpt lat="48.5292434" lon="9.0089607">
+	<ele>369.75</ele>
+</trkpt>
+<trkpt lat="48.5291226" lon="9.0090600">
+	<ele>367.63</ele>
+</trkpt>
+<trkpt lat="48.5290693" lon="9.0091646">
+	<ele>366.94</ele>
+</trkpt>
+<trkpt lat="48.5289253" lon="9.0092772">
+	<ele>364.51</ele>
+</trkpt>
+<trkpt lat="48.5288453" lon="9.0093496">
+	<ele>363.30</ele>
+</trkpt>
+<trkpt lat="48.5288187" lon="9.0093550">
+	<ele>362.85</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

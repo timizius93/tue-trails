@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:25.422Z</time>
+	</metadata>
+<trk>
+	<name>Kressbach Trail</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.4817164" lon="9.0476000">
+	<ele>461.69</ele>
+</trkpt>
+<trkpt lat="48.4816574" lon="9.0474948">
+	<ele>460.95</ele>
+</trkpt>
+<trkpt lat="48.4816111" lon="9.0473617">
+	<ele>459.97</ele>
+</trkpt>
+<trkpt lat="48.4815615" lon="9.0471255">
+	<ele>458.07</ele>
+</trkpt>
+<trkpt lat="48.4814966" lon="9.0468370">
+	<ele>455.32</ele>
+</trkpt>
+<trkpt lat="48.4814702" lon="9.0465696">
+	<ele>452.87</ele>
+</trkpt>
+<trkpt lat="48.4813790" lon="9.0463287">
+	<ele>450.22</ele>
+</trkpt>
+<trkpt lat="48.4812071" lon="9.0461038">
+	<ele>447.48</ele>
+</trkpt>
+<trkpt lat="48.4811141" lon="9.0458285">
+	<ele>445.20</ele>
+</trkpt>
+<trkpt lat="48.4810000" lon="9.0455082">
+	<ele>442.60</ele>
+</trkpt>
+<trkpt lat="48.4810105" lon="9.0451853">
+	<ele>440.52</ele>
+</trkpt>
+<trkpt lat="48.4809474" lon="9.0449312">
+	<ele>439.13</ele>
+</trkpt>
+<trkpt lat="48.4808408" lon="9.0448570">
+	<ele>438.53</ele>
+</trkpt>
+<trkpt lat="48.4808189" lon="9.0447334">
+	<ele>438.11</ele>
+</trkpt>
+<trkpt lat="48.4808552" lon="9.0445970">
+	<ele>437.96</ele>
+</trkpt>
+<trkpt lat="48.4808776" lon="9.0444018">
+	<ele>437.61</ele>
+</trkpt>
+<trkpt lat="48.4808635" lon="9.0442173">
+	<ele>437.16</ele>
+</trkpt>
+<trkpt lat="48.4808423" lon="9.0440080">
+	<ele>436.48</ele>
+</trkpt>
+<trkpt lat="48.4807635" lon="9.0437277">
+	<ele>435.47</ele>
+</trkpt>
+<trkpt lat="48.4806542" lon="9.0435273">
+	<ele>434.93</ele>
+</trkpt>
+<trkpt lat="48.4806001" lon="9.0433392">
+	<ele>434.52</ele>
+</trkpt>
+<trkpt lat="48.4805364" lon="9.0428342">
+	<ele>433.44</ele>
+</trkpt>
+<trkpt lat="48.4805402" lon="9.0425891">
+	<ele>432.80</ele>
+</trkpt>
+<trkpt lat="48.4805314" lon="9.0424066">
+	<ele>432.33</ele>
+</trkpt>
+<trkpt lat="48.4805918" lon="9.0421064">
+	<ele>431.61</ele>
+</trkpt>
+<trkpt lat="48.4806208" lon="9.0417909">
+	<ele>430.73</ele>
+</trkpt>
+<trkpt lat="48.4806019" lon="9.0414367">
+	<ele>429.03</ele>
+</trkpt>
+<trkpt lat="48.4805988" lon="9.0411136">
+	<ele>426.95</ele>
+</trkpt>
+<trkpt lat="48.4807151" lon="9.0407489">
+	<ele>424.80</ele>
+</trkpt>
+<trkpt lat="48.4808987" lon="9.0404027">
+	<ele>422.62</ele>
+</trkpt>
+<trkpt lat="48.4811205" lon="9.0401050">
+	<ele>419.96</ele>
+</trkpt>
+<trkpt lat="48.4812766" lon="9.0398581">
+	<ele>417.67</ele>
+</trkpt>
+<trkpt lat="48.4814051" lon="9.0394565">
+	<ele>414.67</ele>
+</trkpt>
+<trkpt lat="48.4814908" lon="9.0390641">
+	<ele>411.26</ele>
+</trkpt>
+<trkpt lat="48.4815803" lon="9.0387520">
+	<ele>407.32</ele>
+</trkpt>
+<trkpt lat="48.4817009" lon="9.0384396">
+	<ele>402.92</ele>
+</trkpt>
+<trkpt lat="48.4817550" lon="9.0381679">
+	<ele>399.60</ele>
+</trkpt>
+<trkpt lat="48.4818306" lon="9.0378936">
+	<ele>395.73</ele>
+</trkpt>
+<trkpt lat="48.4819441" lon="9.0376083">
+	<ele>391.51</ele>
+</trkpt>
+<trkpt lat="48.4820539" lon="9.0372986">
+	<ele>387.69</ele>
+</trkpt>
+<trkpt lat="48.4821581" lon="9.0372081">
+	<ele>385.74</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

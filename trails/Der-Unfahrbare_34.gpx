@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:28.210Z</time>
+	</metadata>
+<trk>
+	<name>Der Unfahrbare</name>
+	<link href="https://bikerouter.de/#map=19/48.50411/9.02688/OpenTopoMap,Strava%20Heatmap%20Bike,route-quality&amp;lonlats=9.026261,48.505291;9.026253,48.505227;9.026221,48.505134;9.026178,48.505081;9.026132,48.504986;9.02614,48.504942;9.026132,48.504899;9.026003,48.504873;9.025971,48.504833;9.025974,48.504812;9.026003,48.504793;9.026181,48.504841;9.026194,48.504812;9.026046,48.504745;9.026071,48.504723;9.026189,48.504759;9.026194,48.504723;9.026036,48.50467;9.02592,48.504657;9.025915,48.504622;9.02606,48.504622;9.02614,48.50462;9.026296,48.504681;9.02629,48.504633;9.026175,48.504572;9.026081,48.50457;9.025859,48.504542;9.025867,48.504512;9.025944,48.504512;9.026049,48.504494;9.02614,48.504503;9.02621,48.504487;9.026355,48.504531;9.026355,48.504506;9.026266,48.504469;9.026121,48.504444;9.026009,48.504405;9.026046,48.504384;9.026103,48.504382;9.026231,48.504389;9.02632,48.504396;9.026349,48.504376;9.026258,48.504325;9.026103,48.504204;9.026113,48.504093;9.026181,48.504054;9.026344,48.503986;9.026473,48.50394;9.026543,48.503881;9.026577,48.503799;9.02662,48.503755;9.026816,48.503799;9.027058,48.503863;9.027256,48.503908;9.027387,48.503931;9.027487,48.503933;9.027621,48.503963;9.027736,48.50399;9.02779,48.504006;9.027852,48.504048&amp;straight=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58&amp;profile=mtb-zossebart">
+		<text>bikerouter.de</text>
+	</link>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5050812" lon="9.0261757">
+	<ele>405.73</ele>
+</trkpt>
+<trkpt lat="48.5050156" lon="9.0261576">
+	<ele>403.61</ele>
+</trkpt>
+<trkpt lat="48.5049824" lon="9.0261312">
+	<ele>402.46</ele>
+</trkpt>
+<trkpt lat="48.5049551" lon="9.0261342">
+	<ele>401.65</ele>
+</trkpt>
+<trkpt lat="48.5049184" lon="9.0261470">
+	<ele>400.24</ele>
+</trkpt>
+<trkpt lat="48.5048903" lon="9.0261192">
+	<ele>398.62</ele>
+</trkpt>
+<trkpt lat="48.5048801" lon="9.0260733">
+	<ele>397.09</ele>
+</trkpt>
+<trkpt lat="48.5048726" lon="9.0260035">
+	<ele>396.88</ele>
+</trkpt>
+<trkpt lat="48.5048335" lon="9.0259713">
+	<ele>395.55</ele>
+</trkpt>
+<trkpt lat="48.5048121" lon="9.0259740">
+	<ele>394.77</ele>
+</trkpt>
+<trkpt lat="48.5047926" lon="9.0260035">
+	<ele>393.96</ele>
+</trkpt>
+<trkpt lat="48.5048406" lon="9.0261805">
+	<ele>394.49</ele>
+</trkpt>
+<trkpt lat="48.5048121" lon="9.0261939">
+	<ele>393.21</ele>
+</trkpt>
+<trkpt lat="48.5047446" lon="9.0260464">
+	<ele>391.82</ele>
+</trkpt>
+<trkpt lat="48.5047232" lon="9.0260705">
+	<ele>390.75</ele>
+</trkpt>
+<trkpt lat="48.5047588" lon="9.0261886">
+	<ele>391.04</ele>
+</trkpt>
+<trkpt lat="48.5047232" lon="9.0261939">
+	<ele>389.41</ele>
+</trkpt>
+<trkpt lat="48.5046699" lon="9.0260357">
+	<ele>388.70</ele>
+</trkpt>
+<trkpt lat="48.5046574" lon="9.0259203">
+	<ele>388.62</ele>
+</trkpt>
+<trkpt lat="48.5046219" lon="9.0259150">
+	<ele>387.09</ele>
+</trkpt>
+<trkpt lat="48.5046219" lon="9.0260598">
+	<ele>386.34</ele>
+</trkpt>
+<trkpt lat="48.5046201" lon="9.0261403">
+	<ele>385.37</ele>
+</trkpt>
+<trkpt lat="48.5046806" lon="9.0262958">
+	<ele>385.85</ele>
+</trkpt>
+<trkpt lat="48.5046325" lon="9.0262905">
+	<ele>383.63</ele>
+</trkpt>
+<trkpt lat="48.5045721" lon="9.0261751">
+	<ele>382.58</ele>
+</trkpt>
+<trkpt lat="48.5045703" lon="9.0260813">
+	<ele>383.72</ele>
+</trkpt>
+<trkpt lat="48.5045419" lon="9.0258586">
+	<ele>383.57</ele>
+</trkpt>
+<trkpt lat="48.5045116" lon="9.0258667">
+	<ele>382.23</ele>
+</trkpt>
+<trkpt lat="48.5045116" lon="9.0259445">
+	<ele>382.07</ele>
+</trkpt>
+<trkpt lat="48.5044939" lon="9.0260491">
+	<ele>380.43</ele>
+</trkpt>
+<trkpt lat="48.5045027" lon="9.0261403">
+	<ele>379.71</ele>
+</trkpt>
+<trkpt lat="48.5044867" lon="9.0262100">
+	<ele>377.81</ele>
+</trkpt>
+<trkpt lat="48.5045312" lon="9.0263548">
+	<ele>377.32</ele>
+</trkpt>
+<trkpt lat="48.5045063" lon="9.0263548">
+	<ele>376.06</ele>
+</trkpt>
+<trkpt lat="48.5044690" lon="9.0262663">
+	<ele>375.91</ele>
+</trkpt>
+<trkpt lat="48.5044441" lon="9.0261215">
+	<ele>377.11</ele>
+</trkpt>
+<trkpt lat="48.5044049" lon="9.0260088">
+	<ele>376.61</ele>
+</trkpt>
+<trkpt lat="48.5043836" lon="9.0260464">
+	<ele>375.20</ele>
+</trkpt>
+<trkpt lat="48.5043818" lon="9.0261027">
+	<ele>374.37</ele>
+</trkpt>
+<trkpt lat="48.5043889" lon="9.0262315">
+	<ele>372.58</ele>
+</trkpt>
+<trkpt lat="48.5043961" lon="9.0263200">
+	<ele>371.20</ele>
+</trkpt>
+<trkpt lat="48.5043765" lon="9.0263495">
+	<ele>369.62</ele>
+</trkpt>
+<trkpt lat="48.5043249" lon="9.0262583">
+	<ele>368.96</ele>
+</trkpt>
+<trkpt lat="48.5042040" lon="9.0261027">
+	<ele>366.17</ele>
+</trkpt>
+<trkpt lat="48.5040928" lon="9.0261135">
+	<ele>361.25</ele>
+</trkpt>
+<trkpt lat="48.5040537" lon="9.0261805">
+	<ele>358.46</ele>
+</trkpt>
+<trkpt lat="48.5039861" lon="9.0263441">
+	<ele>352.68</ele>
+</trkpt>
+<trkpt lat="48.5039399" lon="9.0264729">
+	<ele>348.58</ele>
+</trkpt>
+<trkpt lat="48.5038812" lon="9.0265426">
+	<ele>345.27</ele>
+</trkpt>
+<trkpt lat="48.5037994" lon="9.0265775">
+	<ele>341.88</ele>
+</trkpt>
+<trkpt lat="48.5037549" lon="9.0266204">
+	<ele>339.86</ele>
+</trkpt>
+<trkpt lat="48.5037994" lon="9.0268162">
+	<ele>339.10</ele>
+</trkpt>
+<trkpt lat="48.5038634" lon="9.0270576">
+	<ele>338.25</ele>
+</trkpt>
+<trkpt lat="48.5039079" lon="9.0272561">
+	<ele>337.23</ele>
+</trkpt>
+<trkpt lat="48.5039310" lon="9.0273875">
+	<ele>336.35</ele>
+</trkpt>
+<trkpt lat="48.5039328" lon="9.0274867">
+	<ele>335.22</ele>
+</trkpt>
+<trkpt lat="48.5039630" lon="9.0276209">
+	<ele>334.42</ele>
+</trkpt>
+<trkpt lat="48.5039897" lon="9.0277362">
+	<ele>333.63</ele>
+</trkpt>
+<trkpt lat="48.5040057" lon="9.0277898">
+	<ele>333.31</ele>
+</trkpt>
+<trkpt lat="48.5040483" lon="9.0278515">
+	<ele>333.41</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

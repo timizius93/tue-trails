@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:27.775Z</time>
+	</metadata>
+<trk>
+	<name>PS-Trail</name>
+	<link href="https://www.komoot.de">
+	</link>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5140790" lon="9.0905870">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:05.675Z</time>
+</trkpt>
+<trkpt lat="48.5140606" lon="9.0905521">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:06.876Z</time>
+</trkpt>
+<trkpt lat="48.5141200" lon="9.0905281">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:09.329Z</time>
+</trkpt>
+<trkpt lat="48.5141501" lon="9.0905385">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:10.561Z</time>
+</trkpt>
+<trkpt lat="48.5141847" lon="9.0905414">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:11.941Z</time>
+</trkpt>
+<trkpt lat="48.5142165" lon="9.0905212">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:13.320Z</time>
+</trkpt>
+<trkpt lat="48.5142580" lon="9.0905551">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:15.202Z</time>
+</trkpt>
+<trkpt lat="48.5143177" lon="9.0905711">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:17.620Z</time>
+</trkpt>
+<trkpt lat="48.5144140" lon="9.0905480">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:21.507Z</time>
+</trkpt>
+<trkpt lat="48.5144879" lon="9.0905738">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:24.644Z</time>
+</trkpt>
+<trkpt lat="48.5145668" lon="9.0904540">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:28.939Z</time>
+</trkpt>
+<trkpt lat="48.5146613" lon="9.0903893">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:31.941Z</time>
+</trkpt>
+<trkpt lat="48.5147493" lon="9.0904662">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:34.884Z</time>
+</trkpt>
+<trkpt lat="48.5148081" lon="9.0903193">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:38.181Z</time>
+</trkpt>
+<trkpt lat="48.5148811" lon="9.0903963">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:40.038Z</time>
+</trkpt>
+<trkpt lat="48.5149604" lon="9.0903427">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:41.852Z</time>
+</trkpt>
+<trkpt lat="48.5150902" lon="9.0903459">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:46.033Z</time>
+</trkpt>
+<trkpt lat="48.5151600" lon="9.0902985">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:50.024Z</time>
+</trkpt>
+<trkpt lat="48.5152277" lon="9.0902880">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:53.580Z</time>
+</trkpt>
+<trkpt lat="48.5153171" lon="9.0902071">
+	<ele>353.98</ele>
+	<time>2024-11-14T15:32:59.035Z</time>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

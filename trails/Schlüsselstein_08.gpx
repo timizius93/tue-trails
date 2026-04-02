@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:25.815Z</time>
+	</metadata>
+<trk>
+	<name>Schlüsselstein 08</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5454034" lon="9.1479121">
+	<ele>366.95</ele>
+</trkpt>
+<trkpt lat="48.5453674" lon="9.1481120">
+	<ele>365.02</ele>
+</trkpt>
+<trkpt lat="48.5453338" lon="9.1482845">
+	<ele>363.07</ele>
+</trkpt>
+<trkpt lat="48.5453200" lon="9.1484521">
+	<ele>360.84</ele>
+</trkpt>
+<trkpt lat="48.5452685" lon="9.1485704">
+	<ele>359.20</ele>
+</trkpt>
+<trkpt lat="48.5451918" lon="9.1487055">
+	<ele>357.13</ele>
+</trkpt>
+<trkpt lat="48.5451612" lon="9.1487929">
+	<ele>355.67</ele>
+</trkpt>
+<trkpt lat="48.5451830" lon="9.1488615">
+	<ele>354.56</ele>
+</trkpt>
+<trkpt lat="48.5452362" lon="9.1489207">
+	<ele>353.45</ele>
+</trkpt>
+<trkpt lat="48.5452822" lon="9.1489953">
+	<ele>351.75</ele>
+</trkpt>
+<trkpt lat="48.5453209" lon="9.1490705">
+	<ele>349.80</ele>
+</trkpt>
+<trkpt lat="48.5453223" lon="9.1491684">
+	<ele>347.38</ele>
+</trkpt>
+<trkpt lat="48.5453344" lon="9.1492758">
+	<ele>344.15</ele>
+</trkpt>
+<trkpt lat="48.5453242" lon="9.1494022">
+	<ele>339.93</ele>
+</trkpt>
+<trkpt lat="48.5452918" lon="9.1495338">
+	<ele>335.36</ele>
+</trkpt>
+<trkpt lat="48.5452551" lon="9.1496624">
+	<ele>330.84</ele>
+</trkpt>
+<trkpt lat="48.5452280" lon="9.1497632">
+	<ele>327.43</ele>
+</trkpt>
+<trkpt lat="48.5452575" lon="9.1498677">
+	<ele>323.72</ele>
+</trkpt>
+<trkpt lat="48.5452657" lon="9.1499751">
+	<ele>320.64</ele>
+</trkpt>
+<trkpt lat="48.5452212" lon="9.1500745">
+	<ele>318.74</ele>
+</trkpt>
+<trkpt lat="48.5452164" lon="9.1501833">
+	<ele>316.61</ele>
+</trkpt>
+<trkpt lat="48.5451714" lon="9.1503039">
+	<ele>314.70</ele>
+</trkpt>
+<trkpt lat="48.5451453" lon="9.1504011">
+	<ele>313.25</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

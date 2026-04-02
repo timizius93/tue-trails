@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="https://www.komoot.de" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Up-Up-Again_40</name>
+    <author>
+      <link href="https://www.komoot.de">
+        <text>komoot</text>
+        <type>text/html</type>
+      </link>
+    </author>
+  </metadata>
+  <trk>
+    <name>Up-Up-Again_40</name>
+    <trkseg>
+      <trkpt lat="48.507798" lon="9.085642">
+        <ele>376.158018</ele>
+        <time>2026-04-02T12:24:34.335Z</time>
+      </trkpt>
+      <trkpt lat="48.507503" lon="9.085347">
+        <ele>376.158018</ele>
+        <time>2026-04-02T12:25:12.008Z</time>
+      </trkpt>
+      <trkpt lat="48.507281" lon="9.085228">
+        <ele>376.158018</ele>
+        <time>2026-04-02T12:25:37.603Z</time>
+      </trkpt>
+      <trkpt lat="48.506662" lon="9.084571">
+        <ele>376.158018</ele>
+        <time>2026-04-02T12:27:03.027Z</time>
+      </trkpt>
+      <trkpt lat="48.505790" lon="9.083514">
+        <ele>376.158018</ele>
+        <time>2026-04-02T12:29:04.509Z</time>
+      </trkpt>
+      <trkpt lat="48.505516" lon="9.083439">
+        <ele>376.158018</ele>
+        <time>2026-04-02T12:29:33.430Z</time>
+      </trkpt>
+      <trkpt lat="48.505440" lon="9.083418">
+        <ele>376.158018</ele>
+        <time>2026-04-02T12:29:41.231Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

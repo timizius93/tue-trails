@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:29.037Z</time>
+	</metadata>
+<trk>
+	<name>Himbachtal Fänger</name>
+	<link href="https://bikerouter.de/#map=16/48.5391/9.0009/OpenTopoMap,Strava%20Heatmap%20Bike,route-quality&amp;lonlats=9.008832,48.536008;9.008081,48.535994;9.007545,48.535992;9.007292,48.535952;9.006922,48.535977;9.006579,48.535977;9.006236,48.535963;9.005613,48.536134&amp;straight=0,1,2,3,4,5,6&amp;profile=mtb-zossebart">
+		<text>bikerouter.de</text>
+	</link>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5359570" lon="9.0087847">
+	<ele>439.85</ele>
+</trkpt>
+<trkpt lat="48.5359743" lon="9.0086677">
+	<ele>438.51</ele>
+</trkpt>
+<trkpt lat="48.5359853" lon="9.0085833">
+	<ele>437.73</ele>
+</trkpt>
+<trkpt lat="48.5359880" lon="9.0085312">
+	<ele>437.21</ele>
+</trkpt>
+<trkpt lat="48.5359966" lon="9.0084548">
+	<ele>436.40</ele>
+</trkpt>
+<trkpt lat="48.5360078" lon="9.0083605">
+	<ele>435.34</ele>
+</trkpt>
+<trkpt lat="48.5360399" lon="9.0082760">
+	<ele>434.27</ele>
+</trkpt>
+<trkpt lat="48.5360751" lon="9.0081449">
+	<ele>432.89</ele>
+</trkpt>
+<trkpt lat="48.5360885" lon="9.0079788">
+	<ele>431.34</ele>
+</trkpt>
+<trkpt lat="48.5361329" lon="9.0077450">
+	<ele>429.09</ele>
+</trkpt>
+<trkpt lat="48.5361831" lon="9.0075313">
+	<ele>426.99</ele>
+</trkpt>
+<trkpt lat="48.5361682" lon="9.0073419">
+	<ele>425.23</ele>
+</trkpt>
+<trkpt lat="48.5361355" lon="9.0071775">
+	<ele>423.20</ele>
+</trkpt>
+<trkpt lat="48.5360411" lon="9.0070132">
+	<ele>420.40</ele>
+</trkpt>
+<trkpt lat="48.5359977" lon="9.0068688">
+	<ele>418.32</ele>
+</trkpt>
+<trkpt lat="48.5359721" lon="9.0068172">
+	<ele>417.47</ele>
+</trkpt>
+<trkpt lat="48.5359772" lon="9.0067680">
+	<ele>416.63</ele>
+</trkpt>
+<trkpt lat="48.5359944" lon="9.0067245">
+	<ele>415.77</ele>
+</trkpt>
+<trkpt lat="48.5359963" lon="9.0066933">
+	<ele>415.26</ele>
+</trkpt>
+<trkpt lat="48.5359888" lon="9.0066453">
+	<ele>414.45</ele>
+</trkpt>
+<trkpt lat="48.5359728" lon="9.0066103">
+	<ele>413.75</ele>
+</trkpt>
+<trkpt lat="48.5359548" lon="9.0065710">
+	<ele>412.77</ele>
+</trkpt>
+<trkpt lat="48.5359557" lon="9.0065224">
+	<ele>411.56</ele>
+</trkpt>
+<trkpt lat="48.5359705" lon="9.0064762">
+	<ele>410.29</ele>
+</trkpt>
+<trkpt lat="48.5359788" lon="9.0064266">
+	<ele>409.02</ele>
+</trkpt>
+<trkpt lat="48.5359668" lon="9.0063782">
+	<ele>407.60</ele>
+</trkpt>
+<trkpt lat="48.5359399" lon="9.0063467">
+	<ele>406.19</ele>
+</trkpt>
+<trkpt lat="48.5359335" lon="9.0063034">
+	<ele>404.97</ele>
+</trkpt>
+<trkpt lat="48.5359401" lon="9.0061589">
+	<ele>401.08</ele>
+</trkpt>
+<trkpt lat="48.5359967" lon="9.0060085">
+	<ele>396.65</ele>
+</trkpt>
+<trkpt lat="48.5360061" lon="9.0058745">
+	<ele>393.20</ele>
+</trkpt>
+<trkpt lat="48.5360186" lon="9.0057450">
+	<ele>389.86</ele>
+</trkpt>
+<trkpt lat="48.5360435" lon="9.0056018">
+	<ele>386.08</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

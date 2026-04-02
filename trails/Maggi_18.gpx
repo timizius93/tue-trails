@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:27.179Z</time>
+	</metadata>
+<trk>
+	<name>Maggi Trails</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5397901" lon="9.0643336">
+	<ele>415.12</ele>
+</trkpt>
+<trkpt lat="48.5398591" lon="9.0644505">
+	<ele>414.63</ele>
+</trkpt>
+<trkpt lat="48.5398861" lon="9.0645308">
+	<ele>414.31</ele>
+</trkpt>
+<trkpt lat="48.5399176" lon="9.0646512">
+	<ele>413.89</ele>
+</trkpt>
+<trkpt lat="48.5399107" lon="9.0647679">
+	<ele>413.30</ele>
+</trkpt>
+<trkpt lat="48.5398984" lon="9.0649128">
+	<ele>412.54</ele>
+</trkpt>
+<trkpt lat="48.5398635" lon="9.0650592">
+	<ele>411.53</ele>
+</trkpt>
+<trkpt lat="48.5398271" lon="9.0652042">
+	<ele>410.37</ele>
+</trkpt>
+<trkpt lat="48.5397857" lon="9.0653409">
+	<ele>409.01</ele>
+</trkpt>
+<trkpt lat="48.5397203" lon="9.0654710">
+	<ele>407.06</ele>
+</trkpt>
+<trkpt lat="48.5396794" lon="9.0655936">
+	<ele>405.29</ele>
+</trkpt>
+<trkpt lat="48.5396637" lon="9.0657222">
+	<ele>403.90</ele>
+</trkpt>
+<trkpt lat="48.5396440" lon="9.0658411">
+	<ele>402.61</ele>
+</trkpt>
+<trkpt lat="48.5396312" lon="9.0659727">
+	<ele>401.50</ele>
+</trkpt>
+<trkpt lat="48.5396096" lon="9.0661050">
+	<ele>400.29</ele>
+</trkpt>
+<trkpt lat="48.5395628" lon="9.0661496">
+	<ele>399.03</ele>
+</trkpt>
+<trkpt lat="48.5395139" lon="9.0662753">
+	<ele>397.49</ele>
+</trkpt>
+<trkpt lat="48.5394676" lon="9.0663883">
+	<ele>396.27</ele>
+</trkpt>
+<trkpt lat="48.5393756" lon="9.0664790">
+	<ele>394.39</ele>
+</trkpt>
+<trkpt lat="48.5392841" lon="9.0665659">
+	<ele>392.76</ele>
+</trkpt>
+<trkpt lat="48.5391856" lon="9.0666529">
+	<ele>391.26</ele>
+</trkpt>
+<trkpt lat="48.5390774" lon="9.0667517">
+	<ele>389.96</ele>
+</trkpt>
+<trkpt lat="48.5389750" lon="9.0668134">
+	<ele>388.92</ele>
+</trkpt>
+<trkpt lat="48.5388559" lon="9.0668915">
+	<ele>388.13</ele>
+</trkpt>
+<trkpt lat="48.5387526" lon="9.0669569">
+	<ele>387.78</ele>
+</trkpt>
+<trkpt lat="48.5386856" lon="9.0669286">
+	<ele>386.73</ele>
+</trkpt>
+<trkpt lat="48.5386384" lon="9.0669019">
+	<ele>385.90</ele>
+</trkpt>
+<trkpt lat="48.5385557" lon="9.0669331">
+	<ele>385.50</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

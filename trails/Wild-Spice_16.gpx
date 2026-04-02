@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:28.346Z</time>
+	</metadata>
+<trk>
+	<name>Wild Spice</name>
+	<link href="https://bikerouter.de/#map=17/48.53623/9.07494/OpenTopoMap,Strava%20Heatmap%20Bike,route-quality&amp;lonlats=9.073645,48.535598;9.073806,48.535527;9.074053,48.535576;9.074407,48.535718;9.074879,48.535747;9.075115,48.53564;9.075319,48.53564;9.075555,48.535675;9.075737,48.535683;9.075866,48.535626&amp;straight=0,1,2,3,4,5,6,7,8&amp;profile=mtb-zossebart">
+		<text>bikerouter.de</text>
+	</link>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5354448" lon="9.0732733">
+	<ele>390.50</ele>
+</trkpt>
+<trkpt lat="48.5354501" lon="9.0734058">
+	<ele>389.60</ele>
+</trkpt>
+<trkpt lat="48.5354850" lon="9.0735585">
+	<ele>388.50</ele>
+</trkpt>
+<trkpt lat="48.5355174" lon="9.0737084">
+	<ele>387.24</ele>
+</trkpt>
+<trkpt lat="48.5355006" lon="9.0738039">
+	<ele>386.02</ele>
+</trkpt>
+<trkpt lat="48.5355327" lon="9.0739093">
+	<ele>384.60</ele>
+</trkpt>
+<trkpt lat="48.5355820" lon="9.0739528">
+	<ele>383.54</ele>
+</trkpt>
+<trkpt lat="48.5356563" lon="9.0739738">
+	<ele>382.14</ele>
+</trkpt>
+<trkpt lat="48.5357115" lon="9.0740051">
+	<ele>380.09</ele>
+</trkpt>
+<trkpt lat="48.5357541" lon="9.0741001">
+	<ele>377.18</ele>
+</trkpt>
+<trkpt lat="48.5357954" lon="9.0741847">
+	<ele>374.52</ele>
+</trkpt>
+<trkpt lat="48.5358123" lon="9.0742948">
+	<ele>371.65</ele>
+</trkpt>
+<trkpt lat="48.5357968" lon="9.0743946">
+	<ele>368.78</ele>
+</trkpt>
+<trkpt lat="48.5357670" lon="9.0744591">
+	<ele>366.12</ele>
+</trkpt>
+<trkpt lat="48.5357834" lon="9.0745764">
+	<ele>362.08</ele>
+</trkpt>
+<trkpt lat="48.5358260" lon="9.0746880">
+	<ele>357.74</ele>
+</trkpt>
+<trkpt lat="48.5358383" lon="9.0747824">
+	<ele>354.49</ele>
+</trkpt>
+<trkpt lat="48.5358233" lon="9.0748901">
+	<ele>351.09</ele>
+</trkpt>
+<trkpt lat="48.5357510" lon="9.0750015">
+	<ele>348.03</ele>
+</trkpt>
+<trkpt lat="48.5356952" lon="9.0751259">
+	<ele>345.08</ele>
+</trkpt>
+<trkpt lat="48.5356442" lon="9.0752033">
+	<ele>342.46</ele>
+</trkpt>
+<trkpt lat="48.5356077" lon="9.0752532">
+	<ele>340.67</ele>
+</trkpt>
+<trkpt lat="48.5355895" lon="9.0753077">
+	<ele>339.24</ele>
+</trkpt>
+<trkpt lat="48.5356075" lon="9.0753930">
+	<ele>337.35</ele>
+</trkpt>
+<trkpt lat="48.5357000" lon="9.0754935">
+	<ele>333.74</ele>
+</trkpt>
+<trkpt lat="48.5357775" lon="9.0755696">
+	<ele>331.59</ele>
+</trkpt>
+<trkpt lat="48.5358089" lon="9.0756286">
+	<ele>330.50</ele>
+</trkpt>
+<trkpt lat="48.5358498" lon="9.0756946">
+	<ele>329.50</ele>
+</trkpt>
+<trkpt lat="48.5358511" lon="9.0757892">
+	<ele>328.53</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

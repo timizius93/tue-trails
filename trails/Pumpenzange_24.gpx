@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:25.748Z</time>
+	</metadata>
+<trk>
+	<name>Pumpenzange </name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5460070" lon="8.9984994">
+	<ele>478.47</ele>
+</trkpt>
+<trkpt lat="48.5459766" lon="8.9984647">
+	<ele>478.85</ele>
+</trkpt>
+<trkpt lat="48.5459566" lon="8.9984448">
+	<ele>479.07</ele>
+</trkpt>
+<trkpt lat="48.5458905" lon="8.9984128">
+	<ele>479.35</ele>
+</trkpt>
+<trkpt lat="48.5457879" lon="8.9983011">
+	<ele>480.09</ele>
+</trkpt>
+<trkpt lat="48.5456650" lon="8.9981797">
+	<ele>480.15</ele>
+</trkpt>
+<trkpt lat="48.5455545" lon="8.9980583">
+	<ele>479.73</ele>
+</trkpt>
+<trkpt lat="48.5454425" lon="8.9979556">
+	<ele>478.95</ele>
+</trkpt>
+<trkpt lat="48.5453320" lon="8.9978319">
+	<ele>478.09</ele>
+</trkpt>
+<trkpt lat="48.5452237" lon="8.9976210">
+	<ele>477.48</ele>
+</trkpt>
+<trkpt lat="48.5451482" lon="8.9974098">
+	<ele>477.66</ele>
+</trkpt>
+<trkpt lat="48.5450657" lon="8.9972122">
+	<ele>477.79</ele>
+</trkpt>
+<trkpt lat="48.5450104" lon="8.9970147">
+	<ele>477.86</ele>
+</trkpt>
+<trkpt lat="48.5450124" lon="8.9968415">
+	<ele>478.10</ele>
+</trkpt>
+<trkpt lat="48.5449752" lon="8.9966758">
+	<ele>477.77</ele>
+</trkpt>
+<trkpt lat="48.5448706" lon="8.9965497">
+	<ele>476.29</ele>
+</trkpt>
+<trkpt lat="48.5447348" lon="8.9964236">
+	<ele>473.49</ele>
+</trkpt>
+<trkpt lat="48.5446428" lon="8.9964087">
+	<ele>471.63</ele>
+</trkpt>
+<trkpt lat="48.5445445" lon="8.9965039">
+	<ele>469.60</ele>
+</trkpt>
+<trkpt lat="48.5444841" lon="8.9966029">
+	<ele>468.57</ele>
+</trkpt>
+<trkpt lat="48.5444732" lon="8.9966627">
+	<ele>468.20</ele>
+</trkpt>
+<trkpt lat="48.5444381" lon="8.9966848">
+	<ele>467.15</ele>
+</trkpt>
+<trkpt lat="48.5443810" lon="8.9966674">
+	<ele>465.55</ele>
+</trkpt>
+<trkpt lat="48.5443359" lon="8.9966985">
+	<ele>464.63</ele>
+</trkpt>
+<trkpt lat="48.5442832" lon="8.9968175">
+	<ele>462.89</ele>
+</trkpt>
+<trkpt lat="48.5441422" lon="8.9969919">
+	<ele>459.42</ele>
+</trkpt>
+<trkpt lat="48.5440326" lon="8.9971135">
+	<ele>456.86</ele>
+</trkpt>
+<trkpt lat="48.5439406" lon="8.9971554">
+	<ele>454.09</ele>
+</trkpt>
+<trkpt lat="48.5438411" lon="8.9971719">
+	<ele>450.61</ele>
+</trkpt>
+<trkpt lat="48.5437697" lon="8.9971250">
+	<ele>447.56</ele>
+</trkpt>
+<trkpt lat="48.5437375" lon="8.9970149">
+	<ele>444.25</ele>
+</trkpt>
+<trkpt lat="48.5437647" lon="8.9968599">
+	<ele>442.90</ele>
+</trkpt>
+<trkpt lat="48.5437801" lon="8.9967635">
+	<ele>441.67</ele>
+</trkpt>
+<trkpt lat="48.5437293" lon="8.9966956">
+	<ele>438.50</ele>
+</trkpt>
+<trkpt lat="48.5436819" lon="8.9966960">
+	<ele>436.60</ele>
+</trkpt>
+<trkpt lat="48.5435955" lon="8.9967315">
+	<ele>433.05</ele>
+</trkpt>
+<trkpt lat="48.5435207" lon="8.9967832">
+	<ele>429.88</ele>
+</trkpt>
+<trkpt lat="48.5434474" lon="8.9967687">
+	<ele>427.09</ele>
+</trkpt>
+<trkpt lat="48.5433536" lon="8.9967304">
+	<ele>423.49</ele>
+</trkpt>
+<trkpt lat="48.5432773" lon="8.9966704">
+	<ele>420.76</ele>
+</trkpt>
+<trkpt lat="48.5431693" lon="8.9965769">
+	<ele>417.29</ele>
+</trkpt>
+<trkpt lat="48.5430860" lon="8.9964976">
+	<ele>414.47</ele>
+</trkpt>
+<trkpt lat="48.5429669" lon="8.9964319">
+	<ele>412.48</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

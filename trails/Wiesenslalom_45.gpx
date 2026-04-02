@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:26.564Z</time>
+	</metadata>
+<trk>
+	<name>Wiesenslalom</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5358995" lon="9.0906530">
+	<ele>371.71</ele>
+</trkpt>
+<trkpt lat="48.5358309" lon="9.0906753">
+	<ele>371.09</ele>
+</trkpt>
+<trkpt lat="48.5357511" lon="9.0906552">
+	<ele>370.09</ele>
+</trkpt>
+<trkpt lat="48.5356880" lon="9.0907184">
+	<ele>369.77</ele>
+</trkpt>
+<trkpt lat="48.5355937" lon="9.0906857">
+	<ele>368.43</ele>
+</trkpt>
+<trkpt lat="48.5354981" lon="9.0907576">
+	<ele>367.90</ele>
+</trkpt>
+<trkpt lat="48.5353871" lon="9.0907033">
+	<ele>366.40</ele>
+</trkpt>
+<trkpt lat="48.5353139" lon="9.0905566">
+	<ele>364.65</ele>
+</trkpt>
+<trkpt lat="48.5352183" lon="9.0905118">
+	<ele>363.82</ele>
+</trkpt>
+<trkpt lat="48.5350928" lon="9.0905111">
+	<ele>363.76</ele>
+</trkpt>
+<trkpt lat="48.5350364" lon="9.0904258">
+	<ele>363.42</ele>
+</trkpt>
+<trkpt lat="48.5349729" lon="9.0902048">
+	<ele>362.78</ele>
+</trkpt>
+<trkpt lat="48.5348270" lon="9.0901411">
+	<ele>364.86</ele>
+</trkpt>
+<trkpt lat="48.5347094" lon="9.0900386">
+	<ele>367.11</ele>
+</trkpt>
+<trkpt lat="48.5346549" lon="9.0899664">
+	<ele>368.07</ele>
+</trkpt>
+<trkpt lat="48.5346221" lon="9.0898788">
+	<ele>368.26</ele>
+</trkpt>
+<trkpt lat="48.5345933" lon="9.0897999">
+	<ele>368.28</ele>
+</trkpt>
+<trkpt lat="48.5345428" lon="9.0897299">
+	<ele>368.68</ele>
+</trkpt>
+<trkpt lat="48.5345219" lon="9.0896332">
+	<ele>367.99</ele>
+</trkpt>
+<trkpt lat="48.5344840" lon="9.0894880">
+	<ele>366.77</ele>
+</trkpt>
+<trkpt lat="48.5344580" lon="9.0894188">
+	<ele>366.16</ele>
+</trkpt>
+<trkpt lat="48.5344136" lon="9.0893430">
+	<ele>365.53</ele>
+</trkpt>
+<trkpt lat="48.5343899" lon="9.0892698">
+	<ele>364.67</ele>
+</trkpt>
+<trkpt lat="48.5343736" lon="9.0891929">
+	<ele>363.69</ele>
+</trkpt>
+<trkpt lat="48.5343403" lon="9.0890835">
+	<ele>362.30</ele>
+</trkpt>
+<trkpt lat="48.5342969" lon="9.0889977">
+	<ele>361.08</ele>
+</trkpt>
+<trkpt lat="48.5342612" lon="9.0889688">
+	<ele>360.71</ele>
+</trkpt>
+<trkpt lat="48.5342384" lon="9.0889148">
+	<ele>359.84</ele>
+</trkpt>
+<trkpt lat="48.5342200" lon="9.0888417">
+	<ele>358.59</ele>
+</trkpt>
+<trkpt lat="48.5341816" lon="9.0887911">
+	<ele>357.88</ele>
+</trkpt>
+<trkpt lat="48.5341193" lon="9.0886999">
+	<ele>356.89</ele>
+</trkpt>
+<trkpt lat="48.5340931" lon="9.0886137">
+	<ele>355.86</ele>
+</trkpt>
+<trkpt lat="48.5340599" lon="9.0885590">
+	<ele>355.68</ele>
+</trkpt>
+<trkpt lat="48.5340188" lon="9.0885080">
+	<ele>355.94</ele>
+</trkpt>
+<trkpt lat="48.5339892" lon="9.0884385">
+	<ele>355.93</ele>
+</trkpt>
+<trkpt lat="48.5339634" lon="9.0883298">
+	<ele>355.76</ele>
+</trkpt>
+<trkpt lat="48.5339043" lon="9.0882334">
+	<ele>357.18</ele>
+</trkpt>
+<trkpt lat="48.5338435" lon="9.0882261">
+	<ele>359.34</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

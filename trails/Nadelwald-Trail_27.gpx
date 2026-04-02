@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:28.623Z</time>
+	</metadata>
+<trk>
+	<name>Himbachtrail</name>
+	<link href="https://bikerouter.de/#map=17/48.54442/8.99679/OpenTopoMap,Strava%20Heatmap%20Bike,route-quality&amp;lonlats=8.998693,48.54605;8.998554,48.545574;8.998253,48.545012;8.997899,48.544529;8.997931,48.544394;8.997706,48.54411;8.997459,48.543939;8.997438,48.543726;8.997545,48.543434;8.997813,48.543058;8.998157,48.542731;8.99835,48.542474;8.9982,48.542404;8.998066,48.542333&amp;straight=0,1,2,3,4,5,6,7,8,9,10,11,12&amp;profile=mtb-zossebart">
+		<text>bikerouter.de</text>
+	</link>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5452992" lon="8.9984053">
+	<ele>472.36</ele>
+</trkpt>
+<trkpt lat="48.5450529" lon="8.9982314">
+	<ele>470.79</ele>
+</trkpt>
+<trkpt lat="48.5449746" lon="8.9981883">
+	<ele>470.29</ele>
+</trkpt>
+<trkpt lat="48.5448856" lon="8.9981738">
+	<ele>469.71</ele>
+</trkpt>
+<trkpt lat="48.5447695" lon="8.9981259">
+	<ele>468.88</ele>
+</trkpt>
+<trkpt lat="48.5446617" lon="8.9980599">
+	<ele>468.08</ele>
+</trkpt>
+<trkpt lat="48.5445982" lon="8.9980264">
+	<ele>467.62</ele>
+</trkpt>
+<trkpt lat="48.5444444" lon="8.9979544">
+	<ele>465.32</ele>
+</trkpt>
+<trkpt lat="48.5443690" lon="8.9979349">
+	<ele>463.91</ele>
+</trkpt>
+<trkpt lat="48.5442902" lon="8.9978733">
+	<ele>462.69</ele>
+</trkpt>
+<trkpt lat="48.5441158" lon="8.9977266">
+	<ele>459.95</ele>
+</trkpt>
+<trkpt lat="48.5439178" lon="8.9975086">
+	<ele>456.39</ele>
+</trkpt>
+<trkpt lat="48.5438469" lon="8.9974374">
+	<ele>454.52</ele>
+</trkpt>
+<trkpt lat="48.5437689" lon="8.9973987">
+	<ele>452.54</ele>
+</trkpt>
+<trkpt lat="48.5437064" lon="8.9973933">
+	<ele>451.03</ele>
+</trkpt>
+<trkpt lat="48.5436302" lon="8.9974235">
+	<ele>449.00</ele>
+</trkpt>
+<trkpt lat="48.5435499" lon="8.9974549">
+	<ele>446.37</ele>
+</trkpt>
+<trkpt lat="48.5434270" lon="8.9975105">
+	<ele>442.31</ele>
+</trkpt>
+<trkpt lat="48.5433356" lon="8.9975637">
+	<ele>439.12</ele>
+</trkpt>
+<trkpt lat="48.5430665" lon="8.9977360">
+	<ele>429.58</ele>
+</trkpt>
+<trkpt lat="48.5429598" lon="8.9978264">
+	<ele>425.89</ele>
+</trkpt>
+<trkpt lat="48.5428769" lon="8.9978889">
+	<ele>423.16</ele>
+</trkpt>
+<trkpt lat="48.5427837" lon="8.9979736">
+	<ele>420.11</ele>
+</trkpt>
+<trkpt lat="48.5427327" lon="8.9980304">
+	<ele>418.36</ele>
+</trkpt>
+<trkpt lat="48.5426676" lon="8.9981352">
+	<ele>415.86</ele>
+</trkpt>
+<trkpt lat="48.5426214" lon="8.9981832">
+	<ele>414.74</ele>
+</trkpt>
+<trkpt lat="48.5425957" lon="8.9982094">
+	<ele>414.12</ele>
+</trkpt>
+<trkpt lat="48.5425710" lon="8.9982159">
+	<ele>413.62</ele>
+</trkpt>
+<trkpt lat="48.5425479" lon="8.9982156">
+	<ele>413.16</ele>
+</trkpt>
+<trkpt lat="48.5425294" lon="8.9982136">
+	<ele>412.80</ele>
+</trkpt>
+<trkpt lat="48.5425094" lon="8.9982272">
+	<ele>412.36</ele>
+</trkpt>
+<trkpt lat="48.5424929" lon="8.9982398">
+	<ele>411.99</ele>
+</trkpt>
+<trkpt lat="48.5424759" lon="8.9982665">
+	<ele>411.50</ele>
+</trkpt>
+<trkpt lat="48.5424429" lon="8.9983027">
+	<ele>410.80</ele>
+</trkpt>
+<trkpt lat="48.5423998" lon="8.9983105">
+	<ele>410.09</ele>
+</trkpt>
+<trkpt lat="48.5423651" lon="8.9982909">
+	<ele>409.38</ele>
+</trkpt>
+<trkpt lat="48.5423290" lon="8.9982553">
+	<ele>408.42</ele>
+</trkpt>
+<trkpt lat="48.5422947" lon="8.9981982">
+	<ele>407.27</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

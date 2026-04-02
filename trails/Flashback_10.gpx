@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:26.417Z</time>
+	</metadata>
+<trk>
+	<name>Flashback</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5538440" lon="9.0933346">
+	<ele>446.64</ele>
+</trkpt>
+<trkpt lat="48.5539346" lon="9.0933032">
+	<ele>445.69</ele>
+</trkpt>
+<trkpt lat="48.5540314" lon="9.0933152">
+	<ele>444.68</ele>
+</trkpt>
+<trkpt lat="48.5541191" lon="9.0933549">
+	<ele>443.56</ele>
+</trkpt>
+<trkpt lat="48.5542288" lon="9.0933219">
+	<ele>442.07</ele>
+</trkpt>
+<trkpt lat="48.5543914" lon="9.0932640">
+	<ele>438.64</ele>
+</trkpt>
+<trkpt lat="48.5545037" lon="9.0931698">
+	<ele>436.02</ele>
+</trkpt>
+<trkpt lat="48.5545462" lon="9.0930616">
+	<ele>434.97</ele>
+</trkpt>
+<trkpt lat="48.5546180" lon="9.0929308">
+	<ele>432.77</ele>
+</trkpt>
+<trkpt lat="48.5547111" lon="9.0928298">
+	<ele>430.85</ele>
+</trkpt>
+<trkpt lat="48.5548074" lon="9.0926475">
+	<ele>428.71</ele>
+</trkpt>
+<trkpt lat="48.5549116" lon="9.0924272">
+	<ele>425.75</ele>
+</trkpt>
+<trkpt lat="48.5549985" lon="9.0922046">
+	<ele>423.48</ele>
+</trkpt>
+<trkpt lat="48.5551248" lon="9.0920279">
+	<ele>420.89</ele>
+</trkpt>
+<trkpt lat="48.5552059" lon="9.0920020">
+	<ele>419.89</ele>
+</trkpt>
+<trkpt lat="48.5552810" lon="9.0918967">
+	<ele>418.63</ele>
+</trkpt>
+<trkpt lat="48.5553573" lon="9.0917079">
+	<ele>416.30</ele>
+</trkpt>
+<trkpt lat="48.5554401" lon="9.0915873">
+	<ele>414.55</ele>
+</trkpt>
+<trkpt lat="48.5555454" lon="9.0915756">
+	<ele>413.38</ele>
+</trkpt>
+<trkpt lat="48.5556484" lon="9.0914964">
+	<ele>412.11</ele>
+</trkpt>
+<trkpt lat="48.5557020" lon="9.0913780">
+	<ele>411.07</ele>
+</trkpt>
+<trkpt lat="48.5557790" lon="9.0912558">
+	<ele>409.84</ele>
+</trkpt>
+<trkpt lat="48.5558523" lon="9.0912484">
+	<ele>408.82</ele>
+</trkpt>
+<trkpt lat="48.5559162" lon="9.0912853">
+	<ele>407.87</ele>
+</trkpt>
+<trkpt lat="48.5560100" lon="9.0913569">
+	<ele>406.26</ele>
+</trkpt>
+<trkpt lat="48.5560655" lon="9.0913620">
+	<ele>405.39</ele>
+</trkpt>
+<trkpt lat="48.5561225" lon="9.0913222">
+	<ele>404.44</ele>
+</trkpt>
+<trkpt lat="48.5563296" lon="9.0908491">
+	<ele>399.81</ele>
+</trkpt>
+<trkpt lat="48.5563726" lon="9.0906630">
+	<ele>398.24</ele>
+</trkpt>
+<trkpt lat="48.5564905" lon="9.0904337">
+	<ele>395.95</ele>
+</trkpt>
+<trkpt lat="48.5565839" lon="9.0902808">
+	<ele>394.63</ele>
+</trkpt>
+<trkpt lat="48.5566495" lon="9.0901461">
+	<ele>393.56</ele>
+</trkpt>
+<trkpt lat="48.5567552" lon="9.0900907">
+	<ele>392.49</ele>
+</trkpt>
+<trkpt lat="48.5568403" lon="9.0899519">
+	<ele>391.58</ele>
+</trkpt>
+<trkpt lat="48.5568415" lon="9.0898218">
+	<ele>390.95</ele>
+</trkpt>
+<trkpt lat="48.5569021" lon="9.0897110">
+	<ele>390.26</ele>
+</trkpt>
+<trkpt lat="48.5570298" lon="9.0895821">
+	<ele>388.30</ele>
+</trkpt>
+<trkpt lat="48.5570750" lon="9.0894314">
+	<ele>386.54</ele>
+</trkpt>
+<trkpt lat="48.5570730" lon="9.0891911">
+	<ele>383.98</ele>
+</trkpt>
+<trkpt lat="48.5571583" lon="9.0890326">
+	<ele>381.70</ele>
+</trkpt>
+<trkpt lat="48.5572845" lon="9.0888102">
+	<ele>377.99</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

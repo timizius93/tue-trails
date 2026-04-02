@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:27.991Z</time>
+	</metadata>
+<trk>
+	<name>Barmanns Hölle</name>
+	<link href="https://bikerouter.de/#map=17/48.53297/9.02877/OpenTopoMap,Strava%20Heatmap%20Bike,route-quality&amp;lonlats=9.030027,48.531726;9.029968,48.531893;9.029877,48.532187;9.029791,48.532401;9.029828,48.532703;9.029871,48.532937;9.029903,48.533108;9.029979,48.533165;9.02986,48.533271;9.029726,48.533421;9.029528,48.533424;9.029405,48.533534;9.02934,48.533622;9.029201,48.533722;9.029099,48.533776;9.02912,48.533957;9.02904,48.534053;9.028734,48.534238;9.028643,48.53432;9.028342,48.534351;9.02809,48.534415;9.027833,48.534444;9.027591,48.534348;9.027511,48.534319;9.02735,48.534287;9.027184,48.534231;9.026991,48.534191;9.026797,48.534174;9.026679,48.53417;9.026476,48.534255;9.026261,48.534234;9.025977,48.534202;9.025826,48.534174;9.025682,48.534149;9.025387,48.534113;9.025301,48.534142;9.025199,48.534234;9.025204,48.534472;9.025269,48.534678;9.025285,48.534899&amp;straight=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38&amp;profile=mtb-zossebart">
+		<text>bikerouter.de</text>
+	</link>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5317257" lon="9.0300268">
+	<ele>489.09</ele>
+</trkpt>
+<trkpt lat="48.5318927" lon="9.0299678">
+	<ele>488.20</ele>
+</trkpt>
+<trkpt lat="48.5321873" lon="9.0298766">
+	<ele>484.39</ele>
+</trkpt>
+<trkpt lat="48.5324006" lon="9.0297908">
+	<ele>480.75</ele>
+</trkpt>
+<trkpt lat="48.5326401" lon="9.0297556">
+	<ele>478.62</ele>
+</trkpt>
+<trkpt lat="48.5328364" lon="9.0297635">
+	<ele>477.04</ele>
+</trkpt>
+<trkpt lat="48.5329815" lon="9.0297808">
+	<ele>475.86</ele>
+</trkpt>
+<trkpt lat="48.5330547" lon="9.0298025">
+	<ele>475.36</ele>
+</trkpt>
+<trkpt lat="48.5331263" lon="9.0298232">
+	<ele>474.76</ele>
+</trkpt>
+<trkpt lat="48.5331979" lon="9.0298231">
+	<ele>473.87</ele>
+</trkpt>
+<trkpt lat="48.5332690" lon="9.0297951">
+	<ele>472.69</ele>
+</trkpt>
+<trkpt lat="48.5333083" lon="9.0297603">
+	<ele>471.92</ele>
+</trkpt>
+<trkpt lat="48.5333330" lon="9.0297200">
+	<ele>471.33</ele>
+</trkpt>
+<trkpt lat="48.5333404" lon="9.0296653">
+	<ele>470.75</ele>
+</trkpt>
+<trkpt lat="48.5333516" lon="9.0296099">
+	<ele>470.15</ele>
+</trkpt>
+<trkpt lat="48.5333804" lon="9.0295747">
+	<ele>469.65</ele>
+</trkpt>
+<trkpt lat="48.5334242" lon="9.0295279">
+	<ele>468.92</ele>
+</trkpt>
+<trkpt lat="48.5335241" lon="9.0294241">
+	<ele>467.17</ele>
+</trkpt>
+<trkpt lat="48.5336297" lon="9.0293601">
+	<ele>465.63</ele>
+</trkpt>
+<trkpt lat="48.5337247" lon="9.0292489">
+	<ele>463.91</ele>
+</trkpt>
+<trkpt lat="48.5338179" lon="9.0291450">
+	<ele>462.43</ele>
+</trkpt>
+<trkpt lat="48.5338880" lon="9.0291025">
+	<ele>461.68</ele>
+</trkpt>
+<trkpt lat="48.5339371" lon="9.0291077">
+	<ele>461.19</ele>
+</trkpt>
+<trkpt lat="48.5339957" lon="9.0290981">
+	<ele>460.47</ele>
+</trkpt>
+<trkpt lat="48.5340534" lon="9.0290397">
+	<ele>459.52</ele>
+</trkpt>
+<trkpt lat="48.5341530" lon="9.0288976">
+	<ele>457.77</ele>
+</trkpt>
+<trkpt lat="48.5342357" lon="9.0287860">
+	<ele>456.35</ele>
+</trkpt>
+<trkpt lat="48.5343036" lon="9.0286688">
+	<ele>454.90</ele>
+</trkpt>
+<trkpt lat="48.5343456" lon="9.0285465">
+	<ele>453.90</ele>
+</trkpt>
+<trkpt lat="48.5343544" lon="9.0284027">
+	<ele>452.95</ele>
+</trkpt>
+<trkpt lat="48.5343670" lon="9.0282955">
+	<ele>452.12</ele>
+</trkpt>
+<trkpt lat="48.5344154" lon="9.0280902">
+	<ele>450.20</ele>
+</trkpt>
+<trkpt lat="48.5344279" lon="9.0279358">
+	<ele>449.00</ele>
+</trkpt>
+<trkpt lat="48.5344206" lon="9.0277749">
+	<ele>448.19</ele>
+</trkpt>
+<trkpt lat="48.5343479" lon="9.0275913">
+	<ele>448.00</ele>
+</trkpt>
+<trkpt lat="48.5343194" lon="9.0275109">
+	<ele>447.80</ele>
+</trkpt>
+<trkpt lat="48.5342875" lon="9.0273499">
+	<ele>446.96</ele>
+</trkpt>
+<trkpt lat="48.5342306" lon="9.0271837">
+	<ele>446.52</ele>
+</trkpt>
+<trkpt lat="48.5342217" lon="9.0269886">
+	<ele>445.53</ele>
+</trkpt>
+<trkpt lat="48.5342154" lon="9.0268147">
+	<ele>444.19</ele>
+</trkpt>
+<trkpt lat="48.5342229" lon="9.0266858">
+	<ele>442.82</ele>
+</trkpt>
+<trkpt lat="48.5342645" lon="9.0265400">
+	<ele>439.77</ele>
+</trkpt>
+<trkpt lat="48.5342674" lon="9.0264180">
+	<ele>438.05</ele>
+</trkpt>
+<trkpt lat="48.5342467" lon="9.0262687">
+	<ele>436.66</ele>
+</trkpt>
+<trkpt lat="48.5342028" lon="9.0260030">
+	<ele>434.14</ele>
+</trkpt>
+<trkpt lat="48.5342068" lon="9.0258763">
+	<ele>433.13</ele>
+</trkpt>
+<trkpt lat="48.5341845" lon="9.0257988">
+	<ele>432.43</ele>
+</trkpt>
+<trkpt lat="48.5341371" lon="9.0257308">
+	<ele>431.50</ele>
+</trkpt>
+<trkpt lat="48.5341272" lon="9.0256430">
+	<ele>430.44</ele>
+</trkpt>
+<trkpt lat="48.5341446" lon="9.0255552">
+	<ele>429.28</ele>
+</trkpt>
+<trkpt lat="48.5341758" lon="9.0254584">
+	<ele>427.92</ele>
+</trkpt>
+<trkpt lat="48.5342286" lon="9.0253264">
+	<ele>425.07</ele>
+</trkpt>
+<trkpt lat="48.5342721" lon="9.0252836">
+	<ele>423.37</ele>
+</trkpt>
+<trkpt lat="48.5343238" lon="9.0252683">
+	<ele>421.63</ele>
+</trkpt>
+<trkpt lat="48.5344011" lon="9.0252690">
+	<ele>416.38</ele>
+</trkpt>
+<trkpt lat="48.5345077" lon="9.0252764">
+	<ele>410.17</ele>
+</trkpt>
+<trkpt lat="48.5346638" lon="9.0252862">
+	<ele>403.35</ele>
+</trkpt>
+<trkpt lat="48.5348988" lon="9.0252846">
+	<ele>395.17</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

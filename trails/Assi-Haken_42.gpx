@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="https://www.locusmap.app">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/4.33.0</desc>
+		<time>2026-03-31T14:38:27.705Z</time>
+	</metadata>
+<trk>
+	<name>Assi Haken</name>
+	<extensions>
+		<line xmlns="http://www.topografix.com/GPX/gpx_style/0/2">
+			<color>000000</color>
+			<opacity>0.15</opacity>
+			<width>6.0</width>
+			<extensions>
+				<locus:lsColorBase>#27000000</locus:lsColorBase>
+				<locus:lsSymbol>ARROW_2</locus:lsSymbol>
+				<locus:lsColorSymbol>#C1000000</locus:lsColorSymbol>
+				<locus:lsWidth>6.0</locus:lsWidth>
+				<locus:lsUnits>PIXELS</locus:lsUnits>
+			</extensions>
+		</line>
+	</extensions>
+<trkseg>
+<trkpt lat="48.5315148" lon="9.1244893">
+	<ele>368.49</ele>
+</trkpt>
+<trkpt lat="48.5315635" lon="9.1245020">
+	<ele>367.62</ele>
+</trkpt>
+<trkpt lat="48.5316117" lon="9.1245255">
+	<ele>366.60</ele>
+</trkpt>
+<trkpt lat="48.5316426" lon="9.1245371">
+	<ele>365.80</ele>
+</trkpt>
+<trkpt lat="48.5316765" lon="9.1245873">
+	<ele>364.60</ele>
+</trkpt>
+<trkpt lat="48.5317291" lon="9.1246379">
+	<ele>363.07</ele>
+</trkpt>
+<trkpt lat="48.5317754" lon="9.1246538">
+	<ele>360.87</ele>
+</trkpt>
+<trkpt lat="48.5318136" lon="9.1246557">
+	<ele>359.75</ele>
+</trkpt>
+<trkpt lat="48.5318409" lon="9.1246946">
+	<ele>358.63</ele>
+</trkpt>
+<trkpt lat="48.5318747" lon="9.1247764">
+	<ele>356.21</ele>
+</trkpt>
+<trkpt lat="48.5318874" lon="9.1248628">
+	<ele>354.85</ele>
+</trkpt>
+<trkpt lat="48.5319266" lon="9.1249505">
+	<ele>352.27</ele>
+</trkpt>
+<trkpt lat="48.5319664" lon="9.1249749">
+	<ele>350.29</ele>
+</trkpt>
+<trkpt lat="48.5319974" lon="9.1249583">
+	<ele>348.79</ele>
+</trkpt>
+<trkpt lat="48.5320310" lon="9.1249298">
+	<ele>346.87</ele>
+</trkpt>
+<trkpt lat="48.5320666" lon="9.1249276">
+	<ele>344.97</ele>
+</trkpt>
+<trkpt lat="48.5321218" lon="9.1249982">
+	<ele>342.18</ele>
+</trkpt>
+<trkpt lat="48.5321576" lon="9.1250766">
+	<ele>339.85</ele>
+</trkpt>
+<trkpt lat="48.5321940" lon="9.1251410">
+	<ele>337.88</ele>
+</trkpt>
+<trkpt lat="48.5322100" lon="9.1252358">
+	<ele>336.98</ele>
+</trkpt>
+<trkpt lat="48.5322031" lon="9.1253605">
+	<ele>335.36</ele>
+</trkpt>
+<trkpt lat="48.5322173" lon="9.1254790">
+	<ele>333.23</ele>
+</trkpt>
+<trkpt lat="48.5322336" lon="9.1256110">
+	<ele>330.65</ele>
+</trkpt>
+<trkpt lat="48.5322651" lon="9.1257833">
+	<ele>328.65</ele>
+</trkpt>
+<trkpt lat="48.5322818" lon="9.1258930">
+	<ele>326.72</ele>
+</trkpt>
+<trkpt lat="48.5322683" lon="9.1260449">
+	<ele>324.85</ele>
+</trkpt>
+<trkpt lat="48.5322651" lon="9.1262209">
+	<ele>322.29</ele>
+</trkpt>
+<trkpt lat="48.5322668" lon="9.1263140">
+	<ele>320.68</ele>
+</trkpt>
+<trkpt lat="48.5322871" lon="9.1263868">
+	<ele>319.27</ele>
+</trkpt>
+<trkpt lat="48.5323450" lon="9.1264051">
+	<ele>317.38</ele>
+</trkpt>
+<trkpt lat="48.5323690" lon="9.1264101">
+	<ele>316.61</ele>
+</trkpt>
+<trkpt lat="48.5323971" lon="9.1264451">
+	<ele>315.46</ele>
+</trkpt>
+<trkpt lat="48.5324011" lon="9.1264860">
+	<ele>314.59</ele>
+</trkpt>
+<trkpt lat="48.5324268" lon="9.1265183">
+	<ele>313.57</ele>
+</trkpt>
+<trkpt lat="48.5324694" lon="9.1265275">
+	<ele>312.33</ele>
+</trkpt>
+<trkpt lat="48.5325161" lon="9.1265875">
+	<ele>311.00</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>
