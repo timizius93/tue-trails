@@ -573,7 +573,14 @@ const CONFIG = {
 // ══════════════════════════════════════
 //  DEMO-DATEN
 // ══════════════════════════════════════
-// (Demo-Trails entfernt – Daten kommen ausschließlich aus Google Sheets)
+const DEMO_TRAILS = [
+  { id:1, name:'Schönbuch Roller',  lat:48.5310, lng:9.0320, schwierigkeit:'S1', status:'open',     notes:'Flowiger Einstieg, ideal für Anfänger. Loamy Boden – nach Regen glitschig. Kein Bremsen in den Kurven!', komoot:'https://www.komoot.com', gpx:'schoenbuch-roller_01.gpx' },
+  { id:2, name:'Steinlach Drop',    lat:48.5180, lng:9.0680, schwierigkeit:'S3', status:'open',     notes:'Technischer Trail mit mehreren optionalen Drops (max. 1,2 m). Helmet Pflicht. Nur bei trockenem Untergrund fahren.', komoot:'https://www.komoot.com', gpx:'steinlach-drop_02.gpx' },
+  { id:3, name:'Kirnbach Line',     lat:48.5250, lng:9.0450, schwierigkeit:'S2', status:'seasonal', notes:'Gesperrt November–März (Wildruhezone Rehwild). Schöner Herbst-Trail mit Wurzelsektionen und einem kleinen Roller am Ende.', komoot:'https://www.komoot.com' },
+  { id:4, name:'Wurmberg Black',    lat:48.5140, lng:9.0510, schwierigkeit:'S4', status:'closed',   notes:'Derzeit wegen Sturmschäden gesperrt. Sehr technisch – nur für Experten. Enger Durchstieg bei Baum km 0.8 beachten.', komoot:'https://www.komoot.com' },
+  { id:5, name:'Ammer Grind',       lat:48.5290, lng:9.0620, schwierigkeit:'S2', status:'open',     notes:'Mittellanger Trail entlang der Ammer. Guter Mix aus Flowsektionen und kleinen Sprüngen. Einstieg am Parkplatz Hirschau.', komoot:'https://www.komoot.com', gpx:'ammer-grind_05.gpx' },
+  { id:6, name:'Österberg Sweep',   lat:48.5160, lng:9.0430, schwierigkeit:'S1', status:'open',     notes:'Perfekter Warm-Up Trail. Breiter Weg, kaum technisch – schöne Aussicht Richtung Stiftskirche. Gut für Familien.', komoot:'https://www.komoot.com' },
+];
 
 const DIFF_COLORS   = { S1:'#3d8c5a', S2:'#2e72b5', S3:'#c94a1e', S4:'#333' };
 const STATUS_LABELS = { open:'Open', closed:'Closed', seasonal:'Saisonal' };
@@ -687,19 +694,12 @@ async function loadTrails() {
       const csv = await res.text();
       trails = parseCSV(csv);
     } catch(e) {
-      console.warn('Sheet Fehler:', e);
-      const lb = document.getElementById('loading-banner');
-      lb.textContent = 'Trails konnten nicht geladen werden. Bitte später erneut versuchen.';
-      lb.style.color = '#c94a1e';
-      return;
+      console.warn('Sheet Fehler, nutze Demo-Daten:', e);
+      trails = DEMO_TRAILS;
     }
     document.getElementById('loading-banner').classList.remove('visible');
   } else {
-    const lb = document.getElementById('loading-banner');
-    lb.classList.add('visible');
-    lb.textContent = 'Keine Datenquelle konfiguriert.';
-    lb.style.color = '#c94a1e';
-    return;
+    trails = DEMO_TRAILS;
   }
   render(trails);
   setupFilters();
@@ -728,7 +728,7 @@ function parseCSV(csv) {
   }
   if (cur || row.length) { row.push(cur.trim()); if (row.some(c => c !== '')) rows.push(row); }
 
-  const parsed = rows.slice(1).map((cols, i) => {
+  return rows.slice(1).map((cols, i) => {
     // Format: id, name, coords, schwierigkeit, status, notes, komoot, gpx(optional)
     // coords = "48.52135 9.02211" (Leerzeichen oder Komma)
     const [idRaw, name, coordRaw, schwierigkeit, status, notes, komoot, gpx] = cols;
@@ -744,10 +744,6 @@ function parseCSV(csv) {
       gpx: (gpx || '').trim() || null
     };
   }).filter(t => t.name && !isNaN(t.lat));
-
-  // Positionsnummer zuweisen (1-basiert, nach Tabellenreihenfolge)
-  parsed.forEach((t, i) => t.num = i + 1);
-  return parsed;
 }
 
 // ══════════════════════════════════════
@@ -847,7 +843,7 @@ function render(list) {
 
     const icon = L.divIcon({
       className: '',
-      html: `<div class="trail-marker ${trail.status}" style="background:${color}"><span>${trail.num}</span></div>`,
+      html: `<div class="trail-marker ${trail.status}" style="background:${color}"><span>${trail.id}</span></div>`,
       iconSize: [30,30], iconAnchor: [15,30]
     });
     const m = L.marker([trail.lat, trail.lng], { icon }).addTo(map);
@@ -858,7 +854,7 @@ function render(list) {
     card.className = 'trail-card';
     card.dataset.trailId = trail.id;
     card.innerHTML = `
-      <div class="trail-num-bubble" style="background:${color}">${trail.num}</div>
+      <div class="trail-num-bubble" style="background:${color}">${trail.id}</div>
       <div class="trail-body">
         <div class="trail-name">${trail.name}</div>
         <div class="trail-meta">
@@ -888,7 +884,7 @@ function render(list) {
 function openSheet(trail) {
   const color = DIFF_COLORS[trail.schwierigkeit] || '#888';
   document.getElementById('sheet-num-big').style.background = color;
-  document.getElementById('sheet-num-big').textContent = trail.num;
+  document.getElementById('sheet-num-big').textContent = trail.id;
   document.getElementById('sheet-name').textContent = trail.name;
   document.getElementById('sheet-notes').textContent = trail.notes || 'Keine weiteren Infos.';
   document.getElementById('sheet-badges').innerHTML = `
@@ -904,14 +900,15 @@ function openSheet(trail) {
   // GPX-Info anzeigen wenn vorhanden
   const gpxInfo = document.getElementById('sheet-gpx-info');
   const pts = trail._gpxPts || (gpxLayers[trail.id] && gpxLayers[trail.id].pts);
+  const gpxId = String(trail.id).padStart(2, '0');
   if (pts) {
     const dist = trailDistance(pts);
     document.getElementById('gpx-distance').textContent = dist >= 1000
       ? (dist / 1000).toFixed(1) + ' km'
       : Math.round(dist) + ' m';
     const dlBtn = document.getElementById('gpx-download');
-    dlBtn.href = `trails/${trail.gpx}`;
-    dlBtn.download = trail.gpx;
+    dlBtn.href = `trails/trail_${gpxId}.gpx`;
+    dlBtn.download = `trail_${gpxId}.gpx`;
     gpxInfo.style.display = 'block';
   } else {
     gpxInfo.style.display = 'none';
