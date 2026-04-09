@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gpx version="1.1" creator="https://www.komoot.de" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Mountainbike-Tour</name>
+    <author>
+      <link href="https://www.komoot.de">
+        <text>komoot</text>
+        <type>text/html</type>
+      </link>
+    </author>
+  </metadata>
+  <trk>
+    <name>Mountainbike-Tour</name>
+    <trkseg>
+      <trkpt lat="48.542045" lon="9.000650">
+        <ele>428.550006</ele>
+        <time>2026-04-09T13:57:14.304Z</time>
+      </trkpt>
+      <trkpt lat="48.542012" lon="9.000580">
+        <ele>428.550006</ele>
+        <time>2026-04-09T13:57:16.744Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
