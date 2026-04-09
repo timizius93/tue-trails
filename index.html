@@ -1251,6 +1251,7 @@ function endTutorial() {
   const overlay = document.getElementById('tutorial-overlay');
   overlay.classList.remove('visible');
   localStorage.setItem(TUTORIAL_LS_KEY, '1');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function buildDots() {
